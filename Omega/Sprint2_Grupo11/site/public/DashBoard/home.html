@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Gráficos</title>
+    <script src="https://kit.fontawesome.com/c52875e8e8.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css_dashboard/style-graf.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="shortcut icon" href="../img/foto.jpg" type="image/x-icon">
+</head>
+
+<body id="corpo">
+
+
+
+
+
+
+    <section class="main">
+        <div id="barra_nav" class="sidebar sidebar_position">
+            <img src="../img/logo.jpg" class="logomarca">
+            <ul>
+                <li><a href="home.html" class="sidebar_active"> <i
+                            class="fa-solid fa-chart-simple fa-lg"></i>Gráficos</a></li>
+                <li><a href="location.html"><i class="fa-solid fa-location-dot fa-lg"></i>Localização</a></li>
+                <li><a href="Configuracao.html"><i class="fa-solid fa-gear fa-lg"></i>Configurações</a></li>
+            </ul>
+            <a href="../login.html" id="saida" onclick="botaoDeslogar()"><img src="../img/logout.png"> SAIR</a>
+        </div>
+
+        <div class="caixa_maior">
+            <header>
+                <h2>Home</h2>
+                <div class="lateral_icones">
+                    <div class="icone " onclick="redirecionar_ajuda()"><i class="fa-solid fa-circle-question"></i></div>
+                    <div class="user">
+                        <div class="circulo"></div>
+                        <h4><span id="b_usuario">Swift</span></h4>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Div botao excluido aqui -->
+            <div style="display: flex; flex-direction: column; gap: 50px; width: 500px; height: 500px;">
+                <div class="alertasToatsBox" id="alertasBox">
+                </div>
+
+                <div class="alertasToatsBoxUmi" id="alertasBoxUmi">
+                </div>
+            </div>
+
+            <div class="card_graphic">
+                <div class="info_space">
+                    <div class="informarcoes">
+                        <div class="sensor_fun">
+                            <span id="sensores_funconando"></span>
+                            <span id="texto">Sensores Funcionando</span>
+                        </div>
+                        <div class="locais">
+                            <span id="locais_cadastrados"></span>
+                            <span id="texto">Locais Cadastrados</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="gerais">
+                    <p><b>Grafícos Swift ZN</b></p>
+                    <div class="linha1">
+                        <div class="grafico">
+                            <canvas id="myChart5000"></canvas>
+                        </div>
+                        <div class="grafico">
+                            <canvas id="myChart5001"></canvas>
+                        </div>
+                    </div>
+                    <div class="linha2">
+                        <div class="grafico">
+                            <canvas id="myChart5002"></canvas>
+                        </div>
+                        <div class="grafico">
+                            <canvas id="myChart5003"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+</body>
+
+</html>
+
+<script src="alerta.js"></script>
+
+<script>
+
+    function redirecionar_ajuda() {
+        window.location.href = "https://termoguard.atlassian.net/servicedesk/customer/portal/3"
+    }
+
+    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+
+    function botaoDeslogar() {
+        sessionStorage.removeItem("NOME_USUARIO");
+    }
+
+    function contarlocais() {
+        fetch("/usuarios/contar_locais", {
+            method: "get"
+        }).then(function (resposta) {
+            if (resposta.ok) {
+                resposta.json().then((json) => {
+
+                    locais_cadastrados.innerHTML = `${json[0].qtdlocais}`
+                })
+            }
+        })
+    }
+
+    function contarSensores() {
+        fetch("/usuarios/contar_sensores", {
+            method: "get"
+        }).then(function (resposta) {
+            if (resposta.ok) {
+                resposta.json().then((json) => {
+
+                    sensores_funconando.innerHTML = `${json[0].qtdsensores}`
+                })
+            }
+        })
+    }
+
+    setInterval(() => {
+        contarlocais()
+        contarSensores()
+    }, 2000)
+
+    let proximaAtualizacao;
+
+    window.onload = obterDadosGraficos();
+
+    function obterDadosGraficos() {
+        obterDadosGrafico(5000)
+        obterDadosGrafico(5001)
+        obterDadosGrafico(5002)
+        obterDadosGrafico(5003)
+    }
+
+
+
+
+    // O gráfico é construído com três funções:
+    // 1. obterDadosGrafico -> Traz dados do Banco de Dados para montar o gráfico da primeira vez
+    // 2. plotarGrafico -> Monta o gráfico com os dados trazidos e exibe em tela
+    // 3. atualizarGrafico -> Atualiza o gráfico, trazendo novamente dados do Banco
+
+    // Esta função *obterDadosGrafico* busca os últimos dados inseridos em tabela de medidas.
+    // para, quando carregar o gráfico da primeira vez, já trazer com vários dados.
+    // A função *obterDadosGrafico* também invoca a função *plotarGrafico*
+
+    //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
+    //     Para ajustar o "select", ajuste o comando sql em src/models
+    function obterDadosGrafico(idSensor) {
+
+        if (proximaAtualizacao != undefined) {
+            clearTimeout(proximaAtualizacao);
+        }
+
+        fetch(`/medidas/ultimas/${idSensor}`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    resposta.reverse();
+
+                    plotarGrafico(resposta, idSensor);
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+    }
+
+    // Esta função *plotarGrafico* usa os dados capturados na função anterior para criar o gráfico
+    // Configura o gráfico (cores, tipo, etc), materializa-o na página e, 
+    // A função *plotarGrafico* também invoca a função *atualizarGrafico*
+    function plotarGrafico(resposta, idSensor) {
+
+        console.log('iniciando plotagem do gráfico...');
+
+        // Criando estrutura para plotar gráfico - labels
+        let labels = [];
+
+        // Criando estrutura para plotar gráfico - dados
+        let dados = {
+            labels: labels,
+            datasets: [{
+                label: 'Umidade',
+                data: [],
+                fill: false,
+                borderColor: 'rgb(75, 192, 192)',
+                tension: 0.1
+
+            },
+            {
+                label: 'Temperatura',
+                data: [],
+                fill: false,
+                borderColor: 'rgb(199, 52, 52)',
+                tension: 0.1
+            }]
+
+        };
+
+        console.log('----------------------------------------------')
+        console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
+        console.log(resposta)
+
+        // Inserindo valores recebidos em estrutura para plotar o gráfico
+        for (i = 0; i < resposta.length; i++) {
+            var registro = resposta[i];
+            labels.push(registro.dtHora_grafico);
+            dados.datasets[0].data.push(registro.umidade);
+            dados.datasets[1].data.push(registro.temperatura);
+        }
+
+        console.log('----------------------------------------------')
+        console.log('O gráfico será plotado com os respectivos valores:')
+        console.log('Labels:')
+        console.log(labels)
+        console.log('Dados:')
+        console.log(dados.datasets)
+        console.log('----------------------------------------------')
+
+        // Criando estrutura para plotar gráfico - config
+        const config = {
+            type: 'line',
+            data: dados,
+        };
+
+        // Adicionando gráfico criado em div na tela
+
+        let myChart = new Chart(
+            document.getElementById(`myChart${idSensor}`),
+            config
+        );
+
+        setInterval(() => {
+            atualizarGrafico(5000, dados, myChart),
+                atualizarGrafico(5001, dados, myChart),
+                atualizarGrafico(5002, dados, myChart),
+                atualizarGrafico(5003, dados, myChart)
+        }, 6000);
+    }
+
+    // Esta função *atualizarGrafico* atualiza o gráfico que foi renderizado na página,
+    // buscando a última medida inserida em tabela contendo as capturas, 
+
+    //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
+    //     Para ajustar o "select", ajuste o comando sql em src/models
+
+    function atualizarGrafico(idSensor, dados, myChart) {
+        fetch(`/medidas/tempo-real/${idSensor}`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (novoRegistro) {
+
+                    console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
+                    console.log(`Dados atuais do gráfico:`);
+                    console.log(dados);
+
+                    let avisoCaptura = document.getElementById(`avisoCaptura${idSensor}`)
+
+
+                    if (novoRegistro[0].dtHora_grafico == dados.labels[dados.labels.length - 1]) {
+                        console.log("---------------------------------------------------------------")
+                        console.log("Como não há dados novos para captura, o gráfico não atualizará.")
+                        console.log("Horário do novo dado capturado:")
+                        console.log(novoRegistro[0].dtHora_grafico)
+                        console.log("Horário do último dado capturado:")
+                        console.log(dados.labels[dados.labels.length - 1])
+                        console.log("---------------------------------------------------------------")
+                    } else {
+                        console.log(dados)
+                        // tirando e colocando valores no gráfico
+                        dados.labels.shift(); // apagar o primeiro
+                        dados.labels.push(novoRegistro[0].dtHora_grafico); // incluir um novo momento
+
+                        dados.datasets[0].data.shift();  // apagar o primeiro de umidade
+                        dados.datasets[0].data.push(novoRegistro[0].umidade); // incluir uma nova medida de umidade
+
+                        dados.datasets[1].data.shift();  // apagar o primeiro de temperatura
+                        dados.datasets[1].data.push(novoRegistro[0].temperatura); // incluir uma nova medida de temperatura
+
+                        myChart.update();
+                    }
+
+
+                    if (novoRegistro[0].temperatura >= 4 || novoRegistro[0].umidade >= 95) {
+                        obterDados(idSensor);
+                    }
+
+
+
+                    // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
+                    // proximaAtualizacao = setTimeout(() => plotarGrafico(idSensor,dados, myChart), 2000);
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+                // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
+                // proximaAtualizacao = setTimeout(() => plotarGrafico(idSensor,dados, myChart), 2000);
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+    }
+
+</script>
+
+<!-- Transformar Celsius para Fahrenheit -->
+
+<!-- function trasnformarFah(){
+    var temp = Number(input_temperatura.value);
+    var fah = (temp * 9/5) + 32
+
+
+
+    ou
+
+    var fah = (temp * 9/5) + 32
+
+    if (temperatura_escolhida == Fahrenheit){
+div_frase.innerHTML = `jogar no gráfico `
+    }
+
+
+    ou
+
+    mostrar direto no gráfico a temperatura em fahrenheit em mais 2 gráficos
+
+} -->

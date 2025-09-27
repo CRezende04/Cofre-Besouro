@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Configurações</title>
+    <link rel="stylesheet" href="css_dashboard/style_config.css">
+    <script src="https://kit.fontawesome.com/c52875e8e8.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="../img/foto.jpg" type="image/x-icon">
+</head>
+
+<body class="" id="corpo">
+    <div id="div_pop_up"></div>
+    <section class="main">
+        <div id="barra_nav" class="sidebar sidebar_position">
+            <img src="../img/logo.jpg" class="logomarca">
+            <ul>
+                <li><a href="home.html" class="sidebar_active"> <i
+                            class="fa-solid fa-chart-simple fa-lg"></i>Gráficos</a></li>
+                <li><a href="location.html"><i class="fa-solid fa-location-dot fa-lg"></i>Localização</a></li>
+                <li><a href="Configuracao.html"><i class="fa-solid fa-gear fa-lg"></i>Configurações</a></li>
+            </ul>
+            <a href="../login.html" id="saida"><img src="../img/logout.png"> SAIR</a>
+        </div>
+        <div class="caixa_maior">
+            <header class="">
+                <h2>Configurações</h2>
+                <div class="lateral_icones">
+                    <div class="icone" onclick="redirecionar_ajuda()"><i class="fa-solid fa-circle-question"></i></div>
+                    <div class="user">
+                        <div class="circulo"></div>
+                        <h4><span id="b_usuario">Swift</span></h4>
+                    </div>
+                </div>
+            </header>
+            <section class="lista_config">
+                <div class="alertas_lista ">
+                    <h3>Alertas</h3>
+                    <hr class="fechamento">
+                    <h4>Alertas de Temperatura e Umidade</h4>
+                    <h5>Configurar regra dos alertas</h5>
+                    <hr class="hr_menor">
+                    <h5>Configurar/registrar números para receber os alertas</h5>
+
+                </div>
+                <div class="cores_unidades ">
+                    <h3>Cores e Unidades</h3>
+                    <hr class="fechamento">
+                    <h4>Alterar cores utilizadas nos gráficos</h4>
+                    <hr class="hr_maior">
+                    <h5>Alterar unidades dos gráficos</h5>
+                    <hr class="hr_menor">
+                    <h5 class="txt">Temperaturas disponíveis</h5>
+
+                    <div class="linha">
+                        <h6>°C (Celsius)</h6>
+
+                    </div>
+
+                    <hr class="hr_menor_2">
+
+                    <div class="linha">
+                        <h6>°F (Farenheit)</h6>
+
+                    </div>
+
+                    <hr class="hr_menor_2">
+
+                    <div class="linha">
+                        <h6>K (Kelvin)</h6>
+
+                    </div>
+
+                    <hr class="hr_menor">
+
+                    <h5 class="txt">Umidade</h5>
+                    <div class="linha">
+                        <h6>UR (Umidade Relativa)</h6>
+
+                    </div>
+
+                </div>
+
+        </div>
+    </section>
+    </div>
+    </section>
+</body>
+
+</html>
+<script>
+
+    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+
+    function redirecionar_ajuda() {
+        window.location.href = "../fale_conosco.html"
+    }
+
+</script>
