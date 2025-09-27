@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Frequência do Aluno:<input id="input_frequencia"><br>
+    <button onclick="analisar()">Analisar Frequência</button><br>
+    <div id="div_conta"></div>
+</body>
+</html>
+<script>
+    function analisar() {
+        var frequencia = Number(input_frequencia.value)
+    if (frequencia >= 50) {div_conta.innerHTML = `
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwBaLEm5f4YSU34ZEDB4mJsXG6A3eZr7gouQ&usqp=CAU" width="200px">`
+
+    }   
+    else {div_conta.innerHTML = `
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfH8FhxDocdepJpMVvQXH_d1miUufnfwxGRw&usqp=CAU" width="200px">`
+    }
+    }
+</script>

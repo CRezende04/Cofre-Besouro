@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Nome do Passageiro:<input id="input_passageiros"><br>
+    Distancia (Em KM):<input id="input_distancia"><br>
+    Bandeira da Corrida:<input type="number" min="1" max="3" id="input_bandeira"><br>
+    Horario da Corrida:<input type="number" min="0" max="23" id="input_horario"><br>
+    <button onclick="calcular()">Calcular Corrida</button><br>
+    <span id="span_total"></span>
+</body>
+</html>
+<script>
+    function calcular() {
+        var passageiro = input_passageiros.value
+        var distancia = Number(input_distancia.value)
+        var bandeira = Number(input_bandeira.value)
+        var horario = Number(input_horario.value) 
+        var conta = distancia * 1.25
+        
+        if (bandeira = 1) {
+        if (horario >= 0) {
+            if (horario <= 6) { conta = conta + (conta * 0.5)
+            }
+        }
+        if (horario >= 0) {    
+            if (horario <= 12) { conta = conta + (conta * 0.10)
+            }
+        }
+        if (horario >= 13) {
+            if (horario <= 23) { conta = conta + (conta * 0.15)
+            }
+        }
+    }
+        if (bandeira = 2) {
+        if (horario >= 0) {
+            if (horario <= 6) { conta = conta + (conta * 0.20)
+            }
+        }
+    
+            if (horario >= 0) {    
+            if (horario <= 12) { conta = conta + (conta * 0.30)
+            }
+        }
+    
+            if (horario >= 13) {
+                if (horario <= 23) { conta = conta + (conta * 0.15)
+            }
+        }
+    }   
+        if (bandeira = 3) {
+            if (horario >= 0) {
+                if (horario <= 6) { conta = conta + (conta * 0.15)
+            }
+        }
+            if (horario >= 0) {    
+            if (horario <= 12) { conta = conta + (conta * 0.30)
+            }
+        }
+            if (horario >= 13) {
+            if (horario <= 23) { conta = conta + (conta * 0.45)
+            }  
+        }
+    }
+        span_total.innerHTML = `Olá ${passageiro} Sua corrida, será na bandeira ${bandeira}, 
+            percorrerá ${distancia} km e o total da corrida será de ${conta}`
+    }
+</script>

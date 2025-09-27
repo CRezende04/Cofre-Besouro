@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Esta Chovendo:<input id="input_chuva"><br>
+    Tem Dinheiro:<input id="input_dinheiro"><br>
+    Tem Tempo:<input id="input_tempo"><br>
+    Gosta de Nuggtes:<input id="input_nuggtes"><br>
+    McDonnalds:<input id="input_mc"><br>
+    <button onclick="analisar()">Analise</button>
+    <div id="div_frase"></div>
+</body>
+</html>
+<script>
+    function analisar() {
+        var chuva = (input_chuva.value);
+        var din = (input_dinheiro.value);
+        var tempo = (input_tempo.value);
+        var nug = (input_nuggtes.value);
+        var mc = (input_mc.value);
+        if (chuva == "nao" && din == "sim" && tempo == "sim" && nug == "sim" && mc == "sim") {
+            div_frase.innerHTML = `Você dever ir`
+        }
+        else {
+            div_frase.innerHTML = `Você não deve ir`
+        }
+    }
+</script>

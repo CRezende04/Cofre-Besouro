@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Altura incial:<input id="input_inicial"><br>
+    Altura Final:<input id="input_final"><br>
+    Nome do Candidato:<input id="input_nome"><br>
+    Altura do Candidato:<input id="input_altura"><br>
+    <button onclick="verificar()">Verificar</button><br>
+    <div id="div_frase"></div>
+</body>
+</html>
+<script>
+    function verificar() {
+        var inicial = Number(input_inicial.value)
+        var final = Number(input_final.value)
+        var nome = (input_nome.value)
+        var altura = Number(input_altura.value)
+        
+        if (inicial >= 1 && altura <= final) {
+            div_frase.innerHTML = `O candidato ${nome} com altura de ${altura} participará do processo de seleção de piloto, caso a altura do candidato esteja no intervalo informado.`
+        } else {
+            div_frase.innerHTML = `Infelizmente o candidato ${nome} com altura de ${altura} não atende os requisitos, caso a altura do candidato NÃO esteja no intervalo informado.`
+        }
+    }
+</script>

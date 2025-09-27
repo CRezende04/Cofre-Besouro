@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Qual time grande de São Paulo, você torce:<input type="text" id="input_time">
+    <button onclick="verificar()">Fale sobre esse time</button>
+    <div id="div_frase"></div>
+    <div id="div_corithians" style="background-color: Black; color: White;"></div>
+</body>
+</html>
+<script>
+    function verificar() {
+        var time = (input_time.value)
+        if (time == "Corinthians") { 
+            div_frase.innerHTML = `<div style="background-color: Black; color: White;">Salve o Corinthians</style>`
+        }
+        else if (time == "Palmeiras") {
+            div_frase.innerHTML = `<div style="background-color: Green; color: White;">Salve o alviverde imponente</style>`
+        }
+        else if(time == "Santos") { 
+            div_frase.innerHTML = `<div style="background-color: White; color: Black;">Agora que dá a bola é o Santos</style>`
+        }
+        else if(time == "São Paulo"){
+            div_frase.innerHTML = `<div style="background-color: Black; color: Red;">Salve o Tricolor paulista</style>`
+        }
+    }
+</script>

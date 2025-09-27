@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quantidade de latinhas por dia:<input id="input_qtd">
+    <button onclick="refri()">Quantos refris</button>
+    <div id="div_quantidade"></div>
+</body>
+</html>
+<script>
+    function refri(){
+        var qtd = Number(input_qtd.value)
+        var total = qtd * 365
+        if (total >= 500) { 
+            div_quantidade.innerHTML = `${total},Cuidado com a diabetes!`
+        }
+        if (total < 500) { 
+            div_quantidade.innerHTML = `${total}`
+        }
+    }
+</script>

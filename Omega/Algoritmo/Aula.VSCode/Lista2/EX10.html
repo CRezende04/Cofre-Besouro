@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Numero 1: <input id="input_n1">
+    <br><br>
+    Numero 2: <input id="input_n2">
+    <br><br>
+    <button onclick="somar()">Soma</button>
+    <button onclick="diferençiar()">Diferença</button>
+    <button onclick="produto()">Produto</button>
+    <button onclick="razão()">Razão</button>
+
+</body>
+</html>
+
+<script>
+    function somar() {
+        var N1 = Number(input_n1.value)
+        var N2 = Number(input_n2.value)
+        alert("A Soma entre " + N1 + " e " + N2 + " é " + (N1 + N2))
+    }
+    function diferençiar() {
+        var N1 = Number(input_n1.value)
+        var N2 = Number(input_n2.value)
+        alert("A Diferença entre " + N1 + " e " + N2 + " é " + (N1 - N2))
+    }
+    function produto() {
+        var N1 = Number(input_n1.value)
+        var N2 = Number(input_n2.value)
+        alert("O Produto entre " + N1 + " e " + N2 + " é " + (N1 * N2))
+    }
+    function razão() {
+        var N1 = Number(input_n1.value)
+        var N2 = Number(input_n2.value)
+        alert("A Razão entre " + N1 + " e " + N2 + " é " + (N1 / N2))
+    }
+</script>

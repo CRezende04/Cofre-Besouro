@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Total guardado no cofrinho: <u style="color:blue"><span id="span_total">0</span></u><br>
+    Depósitos efetuados: <u style="color:blue"><span id="span_deposito">0</span></u><br>
+    Retiradas efetuadas: <u style="color:blue"><span id="span_retirada">0</span></u><br></b>
+    Valor: <input id=input_retirar><br>
+    <button onclick="depositar05()">Depositar 0,50</button><br>
+    <button onclick="depositar2()">Depositar 2,00</button><br>
+    <button onclick="retirar05()">Retirar 0,50</button><br>
+    <button onclick="retirar()">Retirar</button><br><br>
+</body>
+</html>
+<script>
+    var total = 0
+    var deposito = 0
+    var retirada = 0
+    var valor = Number(input_retirar.value)
+    function depositar05() {
+        deposito += 1;
+        total += 0.50
+        span_total.innerHTML = total
+        span_deposito.innerHTML = deposito
+    }
+    function depositar2() {
+        deposito += 1
+        total += 2
+        span_total.innerHTML = total
+        span_deposito.innerHTML = deposito
+    }
+    function retirar05() {
+        retirada += 1
+        total -= 0.50
+        span_total.innerHTML = total
+        span_retirada.innerHTML = retirada
+    }
+    function retirar() {
+        retirada += 1
+        total -= valor
+        span_total.innerHTML = total
+        span_retirada.innerHTML = retirada
+    }
+</script>

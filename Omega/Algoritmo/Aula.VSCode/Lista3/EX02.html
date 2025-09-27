@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quantidade de Votos do Candidato A:<input id="input_cdtA"><br>
+    Quantidade de Votos do Candidato B:<input id="input_cdtB"><br>
+    Quantidade de Votos de Brancos:<input id="input_R"><br>
+    Quantidade de Votos do Nulos:<input id="input_N"><br>
+    <button onclick="calcular()">Resultado da Eleição</button>
+    
+    <div id="div_vt"></div>
+</body>
+</html>
+
+<script>
+    function calcular(){
+    var cdtA = Number(input_cdtA.value)
+    var cdtB = Number(input_cdtB.value)
+    var cdtR = Number(input_R.value)
+    var cdtN = Number(input_N.value)
+    var T = `${(cdtA + cdtB + cdtR + cdtN)}`;
+     var CA = `${((cdtA / T)*100)}`;
+     var CB = `${((cdtB / T)*100)}`;
+     var In = `${((cdtR + cdtN / T) * 100)}`;
+    div_vt.innerHTML = `<br> Total de Votos: <u>${T}</u> <br>
+            Candidato A: ${CA}% (${cdtA} votos)<br>
+            Candidato B: ${CB}% (${cdtB} votos)<br>
+            Candidato Invalidos: ${In}% (${cdtR+cdtN} votos)<br> 
+            `
+    }
+</script>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Nota1:<input id="input_n1"><br>
+    Nota2:<input id="input_n2"><br>
+    <button onclick="verificar()">Verificar Situação</button>
+    <div id="div_conta"></div>
+</body>
+</html>
+<script>
+    function verificar() {
+        var N1 = Number(input_n1.value)
+        var N2 = Number(input_n2.value)
+        var total = (N1 + N2)/2
+        if (total >= 6) { div_conta.innerHTML = `Parabéns, aprovado!`
+        }
+        else { div_conta.innerHTML = `Tente outra vez....`
+        }
+    }
+</script>

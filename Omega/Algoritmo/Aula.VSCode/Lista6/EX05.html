@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Nota do Aluno:<input id="input_nota">
+    <button onclick="verificar()">Classificar Aluno</button>
+    <div id="div_frase"></div>
+</body>
+</html>
+<script>
+    function verificar() {
+        var nota = Number(input_nota.value)
+        if (nota <= 5) { 
+            div_frase.innerHTML = `Aluno precisa de muita ajuda`
+        }
+        else if (nota <= 7) {
+            div_frase.innerHTML = `Aluno na média`
+        }
+        else if(nota <= 9) { 
+            div_frase.innerHTML = `Aluno na acima da média`
+        }
+        else {
+            div_frase.innerHTML = `Aluno fora da curva`
+        }
+    }
+</script>

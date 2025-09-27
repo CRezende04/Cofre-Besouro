@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Dinheiro:<input id="input_dinheiro">
+    Cartão de débito:<input id="input_debito">
+    Cartão de crédito:<input id="input_credito">
+    Boleto:<input id="input_boleto">
+    <button onclick="analisar()">Analisar Compra</button>
+    <div id="div_frase"></div>
+</body>
+</html>
+<script>
+    function analisar() {
+        var dinheiro = input_dinheiro.value
+        var debito = input_debito.value
+        var credito = input_credito.value
+        var boleto = input_boleto.value
+        if (dinheiro == "Sim" || debito == "Sim") {
+            div_frase.innerHTML = `Você terá que pagar a vista`
+        }
+        else if (credito == "Sim" || boleto == "Sim") {
+            div_frase.innerHTML = `Pagamento poderá ser parcelado`
+        }
+    }
+</script>

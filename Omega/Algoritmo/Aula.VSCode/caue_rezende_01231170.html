@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Antiquário Velho Valioso</h1>
+
+    <h2>Cadastro</h2>
+    Código da Peça:<input type="number" id="input_codigo" max="3999" min="1000"><br>
+    Valor da Peça:<input type="number" id="input_valor"><br>
+    <button onclick="cadastrar()">Cadastrar</button>
+
+    <h2>Ajuste de Preço</h2>
+    Código da Peça Inicial:<input type="number" id="input_codigoInicial"><br>
+    Código da Peça Final:<input type="number" id="input_codigoFinal"><br>
+    Percentual de Reajuste:<input type="number" id="input_percentual"><br>
+    <button onclick="ajustar()">Ajustar</button>
+
+    <h2>Lista de Peças Ajustadas</h2>
+    <div id="div_pecas_ajustadas"></div>
+
+    <h2>Resumo do Ajuste</h2>
+    <div id="div_resumo"></div>
+</body>
+</html>
+<script>
+    var listaCodigoPeca = []
+    var listaValorPeca = []
+
+    function cadastrar() {
+
+        var codigo = Number(input_codigo.value)
+        var valor = Number(input_valor.value)
+        
+        if (codigo >= 1000 && codigo <= 3999 && valor >= 100) {
+
+            if (codigo >= 1000 && codigo <= 3999) {
+
+                if (valor >= 100) {
+
+                listaCodigoPeca.push(codigo)
+                listaValorPeca.push(valor)
+
+                } else {
+                    alert("Valor da Peça menor que R$100,00")
+                }
+
+            } else {
+                    alert("Codigo da Peça menor que 1000 ou maior que 3999")
+                }
+        } else {
+                    alert("Codigo da Peça menor que 1000 ou maior que 3999")
+                    alert("Valor da Peça menor que R$100,00")
+            }         
+    }
+    
+    var verificados = []
+
+    function ajustar() {
+        var codigoInicial = Number(input_codigoInicial.value)
+        var codigoFinal = Number(input_codigoFinal.value)
+        var percentual = Number(input_percentual.value)
+        var soma = 0
+        var menorValor = listaValorPeca[0]
+        div_pecas_ajustadas.innerHTML = ""
+        
+        if (percentual != 0 && percentual != undefined) {
+            for (var i = 0;
+                i <= listaCodigoPeca.length -1;
+                i++) {                    
+                    var valor_ajustado = listaValorPeca[i] + ((listaValorPeca[i] * percentual)/100)
+                    soma += valor_ajustado 
+                    div_pecas_ajustadas.innerHTML += `
+                    Codigo da Peça: ${listaCodigoPeca[i]} - 
+                    Valor Anterior: ${listaValorPeca[i]} -
+                    Valor Ajustado: ${valor_ajustado}<br>
+                    
+                `}
+
+                var menorValor = valor_ajustado
+
+                if (valor_ajustado < menorValor) {
+                menorValor = valor_ajustado
+                }
+
+                soma += valor_ajustado 
+                verificados = listaCodigoPeca.length
+                
+                div_resumo.innerHTML = `
+                Total de Registros Ajustados: ${verificados}<br>
+                Valor Total das Peças com preço Ajustado: ${soma}<br>
+                Valor Medio Das Peças com preço Ajustado: ${soma / verificados}<br>
+                Menor Valor Apos do Ajuste: ${menorValor}
+                `
+        } else {
+            alert("Entre com o percentual de reajuste")
+        }
+
+
+    }
+</script>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Qual sua meta de economia:<input id="input_meta"><br>
+    Quanto tem guardado:<input id="input_guardado"><br>
+    <button onclick="verificar()">Analisar economia</button>
+    <div id="div_frase"></div>
+</body>
+</html>
+<script>
+    function verificar() {
+        var meta = Number(input_meta.value)
+        var guardado = Number(input_guardado.value)
+        var conta = meta - guardado
+        if (guardado < meta) { 
+            div_frase.innerHTML = `Força! Ainda em busca da meta! Falta ${conta}<br>`
+        }
+        else if (guardado == meta) {
+            div_frase.innerHTML = `Parabéns, meta alcançada!<br>`
+        }
+        else {
+            div_frase.innerHTML += `Meta ultrapassada em ${guardado - meta}`
+        }
+    }
+</script>

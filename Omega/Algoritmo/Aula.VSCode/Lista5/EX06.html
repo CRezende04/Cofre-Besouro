@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Temperatura do Ambiente:<input id="input_temp">
+    <button onclick="verificar()">Verificar Clima</button>
+    <div id="div_temperatura"></div>
+</body>
+</html>
+<script>
+    function verificar() {
+        var temp = Number(input_temp.value)
+        if (temp >= 10) { 
+            div_temperatura.innerHTML = `<img src="https://thumbs.dreamstime.com/b/alimentos-estragados-perigosos-e-podres-moldados-n%C3%A3o-comest%C3%ADveis-170766076.jpg" width="200px">`
+        }
+        else { 
+            div_temperatura.innerHTML = `<img src="https://www.vidasport.com.br/uploads/images/2020/08/alimentos-vivos-o-que-sao-e-como-podem-mudar-a-sua-vida-1597166284.jpg" width="200px">`
+
+        }
+    }   
+</script>

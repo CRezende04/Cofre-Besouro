@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Nota ENEM:<input id="input_enem">
+    Nota Vestibular Interno:<input id="input_vestibular">
+    <button onclick="verificar()">Avaliação</button>
+</body>
+</html>
+<script>
+    function verificar() {
+        var ENEM = Number(input_enem.value)
+        var vestibular = Number(input_vestibular.value)
+        if (ENEM >= 800 || vestibular >= 700) {
+            alert("Parabéns! Aprovado")
+        } 
+        else {
+            alert("Tente semestre que vem!")
+        }
+    }
+</script>

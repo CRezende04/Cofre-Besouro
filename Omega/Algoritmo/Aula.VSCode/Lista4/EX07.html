@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Saldo da Conta:<input id="input_saldo"><br>
+    Valor da Retirada:<input id="input_retirada"><br>
+    <button onclick="calcular()">Analisar Conta</button>
+    <div id="div_conta"></div>
+</body>
+</html>
+<script>
+    function calcular(){
+        var saldo = Number(input_saldo.value)
+        var retirada = Number(input_retirada.value)
+        var total = saldo - retirada
+        div_conta.innerHTML = `O saldo atual da conta corrente é R$ ${total}`
+        if (total <= 0) { div_conta.innerHTML = `<b style="color:Red"O saldo atual da 
+        conta corrente é ${total}</b>`
+    }
+    }
+</script>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Numero da Tabuada: <input id="input_numero">
+    <button onclick="ver()">Ver Tabuada</button>
+
+    <div id="div_ver"></div>
+</body>
+</html>
+<script>
+    function ver() {
+        var NM = Number(input_numero.value)
+    div_ver.innerHTML = `
+        ${NM} x 1 = ${NM * 1} <br>
+        ${NM} x 2 = ${NM * 2} <br>
+        ${NM} x 3 = ${NM * 3} <br>
+        ${NM} x 4 = ${NM * 4} <br>
+        ${NM} x 5 = ${NM * 5} <br>
+        ${NM} x 6 = ${NM * 6} <br>
+        ${NM} x 7 = ${NM * 7} <br>
+        ${NM} x 8 = ${NM * 8} <br>
+        ${NM} x 9 = ${NM * 9} `
+    }
+</script>

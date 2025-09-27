@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Renda Individual:<input id="input_individual">
+    Renda Familiar:<input id="input_familiar">
+    <button onclick="verificar()">Terei o benefício</button>
+    <div id="div_frase"></div>
+</body>
+</html>
+<script>
+    function verificar() {
+        var individual = Number(input_individual.value)
+        var familiar = Number(input_familiar.value)
+        if (individual <= 2000 || familiar <= 3000) {
+            div_frase.innerHTML = `Você terá direito ao auxílio`
+        }
+        else {
+            div_frase.innerHTML = `Sem direito ao auxílio`
+        }
+    }
+</script>

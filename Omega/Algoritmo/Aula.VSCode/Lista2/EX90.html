@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    Nome:<input id="input_nome">
+    <br><br>
+    Data de Nascimento: <input id="input_data">
+    <br><br>
+    RG ou CPF: <input id="input_rgcpf">
+    <br><br>
+    Telefone Comum: <input id="input_telefone1">
+    <br><br>
+    Telefone Emergencial: <input id="input_telefone2">
+    <br><br>
+    Sexo: <input id="input_sexo">
+    <br><br>
+    Email: <input id="input_email">
+    <br><br>
+    <button onclick="cadastro()">Cadrastrar</button>
+</body>
+</html>
+
+<script>
+    
+    function cadastro() {
+        alert( "Parabens " + input_nome.value + 
+        ". Você ja esta Cadastrado no sistema do CTJP!")
+        alert( "Aqui esta as informações do seu cadastro. " + " Seu Nome é " + input_nome.value + 
+        ", sua data de nascimento é " + input_data.value + ", seu rg ou cpf é " + input_rgcpf.value + ", seu telefone comum é " 
+        + input_telefone1.value + ", seu telefone de emergencia é " + input_telefone2.value + ", seu sexo é " + input_sexo.value + 
+        ", seu email é " + input_email.value)
+    }
+    
+</script>

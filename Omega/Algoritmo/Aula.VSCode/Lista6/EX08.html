@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quantos Pães Francê tem comido por dia:<input id="input_frances"><br>
+    Quantos Pacotes de bolacha recheada tem comido por dia:<input id="input_bolacha"><br>
+    Quantos Copos de achocolatado tem tomado por dia:<input id="input_achocolatado"><br>
+    <button onclick="verificar()">Verificar calorias</button>
+    <div id="div_frase"></div>
+</body>
+</html>
+<script>
+    function verificar() {
+        var frances = Number(input_frances.value)
+        var bolacha = Number(input_bolacha.value)
+        var achocolatado = Number(input_achocolatado.value)
+        var conta1 = frances * 50
+        var conta2 = bolacha * 80
+        var conta3 = achocolatado * 70
+        var valor = conta1 + conta2 + conta3
+        if (valor < 200) { 
+            div_frase.innerHTML = `Parabéns, vai sair em forma da quarentena!", caso as calorias sejam menores do que 200`
+        }
+        else if (valor < 400) {
+            div_frase.innerHTML = `Cuidado, vai ficar mais "fofinho(a)" após quarentena!`
+        }
+        else {
+            div_frase.innerHTML = `Bom, acho que muitos não vão te reconhecer após a quarentena`
+        }
+    }
+</script>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Idade:<input id="input_idade">
+    CNH:<input id="input_cnh">
+    <button onclick="calcular()">Calcular</button>
+    <div id="div_frase">
+</body>
+</html>
+<script>
+    function calcular() {
+        var idade = Number(input_idade.value)
+        var cnh = innput_cnh.value
+        if (idade >= 18 && cnh == "Sim") {
+            div_frase.innerHTML = "Pode Digirir"
+        }
+        else {
+            div_frase.innerHTML = "Não pode dirigir"
+        } 
+    }
+</script>
