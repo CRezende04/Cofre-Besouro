@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira um numero:<input type="number" id="input_numero" min="0" max="100">
+    <button onclick="dividir()">Ver Divisores</button>
+    <div id="div_frase"></div>
+</body>
+</html>
+<script>
+    function dividir() {
+        var numero = Number(input_numero.value)
+        div_frase.innerHTML = ""
+        for (contador = 0;
+            contador <= numero;
+            contador ++) {
+                if (numero % contador == 0)
+            div_frase.innerHTML += `${contador} <br>`
+        }
+    }
+</script>

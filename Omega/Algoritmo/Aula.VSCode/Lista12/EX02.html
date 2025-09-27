@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Nome dos Time 1:<input id="input_nome1"><br>
+    Nome dos Time 2:<input id="input_nome2"><br>
+    Insira a quantidade de vitórias do time 1:<input id="input_vitorias1"><br>
+    Insira a quantidade de empates do time 1:<input id="input_empates1"><br>
+    Insira a quantidade de derrotas do time 1:<input id="input_derrotas1"><br>
+    Insira a quantidade de vitórias do time 2:<input id="input_vitorias2"><br>
+    Insira a quantidade de empates do time 2:<input id="input_empates2"><br>
+    Insira a quantidade de derrotas do time 2:<input id="input_derrotas2"><br>
+    <button onclick="analisar()">Comparar campanhas</button>
+    <div id="div_frase"></div>
+</body>
+</html>
+<script>
+    function analisar() {
+        var nome1 = input_nome1.value
+        var vitorias1 = Number(input_vitorias1.value)
+        var empates1 = Number(input_empates1.value)
+        var derrotas1 = Number(input_derrotas1.value)
+
+        var nome2 = input_nome2.value
+        var vitorias2 = Number(input_vitorias2.value)
+        var empates2 = Number(input_empates2.value)
+        var derrotas2 = Number(input_derrotas2.value)
+        
+        var times = {
+        Vitória: 3,
+        Empate: 1,
+        Derrota: 0
+        }
+        div_frase.innerHTML = `
+        O time ${nome1} terminou o campeonato  ${(times.Vitória * vitorias1) + (times.Empate * empates1)} com pontos<br>
+        O time ${nome2} terminou o campeonato  ${(times.Vitória * vitorias2) + (times.Empate * empates2)} com pontos<br>`
+    }
+</script>

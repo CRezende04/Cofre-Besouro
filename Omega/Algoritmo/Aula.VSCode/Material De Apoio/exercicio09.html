@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Altura inicial:
+    <input id="input_alt_inicial"><br>
+    Altura final:
+    <input id="input_alt_final"><br>
+    Nome do candidato:
+    <input id="input_nome_candidato"><br>
+    Altura do candidato:
+    <input id="input_alt_candidato"><br>
+    <button onclick="verificar_piloto()">
+        Verificar piloto
+    </button>
+    <div id="div_resultado"></div>
+</body>
+</html>
+<script>
+    function verificar_piloto() {
+        var altInicial = Number(input_alt_inicial.value);
+        var altFinal = Number(input_alt_final.value);
+        var nomeCandidato = input_nome_candidato.value;
+        var altCandidato = Number(input_alt_candidato.value);
+
+        if (altInicial > 1 && altFinal > altInicial) {
+            if (altCandidato >= altInicial && altCandidato <= altFinal) {
+                div_resultado.innerHTML += `
+                O candidato ${nomeCandidato} com altura de ${altCandidato} participará do processo de seleção de piloto<br>
+                `;
+            } else {
+                div_resultado.innerHTML += `
+                Infelizmente o candidato ${nomeCandidato} com altura de ${altCandidato} não atende os requisitos<br>
+                `;
+            }
+        } else {
+            alert("Campos inválidos !");
+        }
+    }
+</script>

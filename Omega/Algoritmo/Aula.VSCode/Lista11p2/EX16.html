@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quantidade de Passageiros: <input id="input_passageiros">
+    <button onclick="verificar()">#Partiu Carona</button>
+    <div id="div_frase"></div>
+</body>
+</html>
+<script>
+    function verificar() {
+        var qtdPassa = Number(input_passageiros.value)
+        div_frase.innerHTML = ""
+        for (var contador = 1;
+            contador <= qtdPassa;
+            contador ++) {
+                if (contador == 1) {
+                div_frase.innerHTML += `Entrou o 1º passageiro (que é o(a) motorista)<br>` 
+            } else if (contador <= 5) {
+                div_frase.innerHTML += `Entrou o ${contador}º passageiro <br>`
+            } else if (contador > 5) {
+                div_frase.innerHTML += `O ${contador}º passageiro terá que esperar!<br> `
+            }
+    }
+    }
+</script>

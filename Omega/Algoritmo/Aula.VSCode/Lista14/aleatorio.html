@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="input_min" placeholder="min" />
+    <input type="text" id="input_max" placeholder="max" /> <br>
+    <button onclick="gerar_aleatorio_input()">Gerar Aleatórios (com base nas inputs)</button> <br>
+    <button onclick="gerar_aleatorio()">Gerar Decimal Aleatório Entre 0 e 1</button> <br>
+    <button onclick="gerar_aleatorio_10()">Gerar Decimal Aleatório Entre 0 e 10</button> <br>
+    <button onclick="gerar_aleatorio_5_20()">Gerar Decimal Aleatório Entre 5 e 20</button> <br>
+    <button onclick="gerar_aleatorio_inteiro()">Gerar INTEIRO Aleatório Entre 15 e 40</button> <br>
+    <div id="div_mensagem"></div>
+  </body>
+</html>
+
+<script>
+  function gerar_aleatorio () {
+    var aleatorio = Math.random(); // gera um número aleatório de 0 a 0.99999
+    div_mensagem.innerHTML = aleatorio; 
+  }
+
+
+  function gerar_aleatorio_10() {
+    var aleatorio = Math.random() * 10; // gera um número de 0 a 9.99999
+    div_mensagem.innerHTML = aleatorio; 
+  }
+
+
+  function gerar_aleatorio_5_20() {
+    var min = 5;
+    var max = 20;
+    var intervalo = max - min // 20 - 5 => 15 
+
+    var aleatorio = Math.random() * intervalo + min; // gera um número de 0 a 14.99999 depois incrementa 5, para deslocar o mínimo entre 5 e 19.99999
+    div_mensagem.innerHTML = aleatorio;
+  }
+
+
+  function gerar_aleatorio_inteiro() {
+    var min = 15;
+    var max = 40;
+    var intervalo =   1 + max - min // 1 + 40 - 15 => 26
+
+    var aleatorio = Math.random() * intervalo + min; // gera um número aleatório entre 0 e 25.99999, depois incrementa 15, para deslocar o mínimo entre 15 e 40.99999
+    var resultado = parseInt(aleatorio); // pega somente a PARCELA INTEIRA do número, descartando as casas decimais, mas NÃO ARREDONDA O INTEIRO!
+    // pelo fato de o "parseInt" não arredondar, precisamos incrementar 1 no intervalo, para gerar 1 número a mais e chegar até 40.999 para obter o número "40" da parcela inteira do número
+    // sem o incremento de 1 no intervalo, o maior número INTEIRO possível seria "39", pois geraria números de 15 a 39.999 invés de 15 a 40.999
+
+    div_mensagem.innerHTML = resultado;
+  }
+  
+
+  function gerar_aleatorio_input() {
+    var min = Number(input_min.value); // 2
+    var max = Number(input_max.value); // 5
+
+    var intervalo = 1 + max - min;  // 4
+    var aleatorio = min + Math.random() * intervalo;
+  // var aleatorio = 2 + Math.random() * (1 + 5 - 2);
+
+    var resultado = parseInt(aleatorio);
+
+    div_mensagem.innerHTML = aleatorio + "<br>";
+    div_mensagem.innerHTML += resultado + "<br>";
+  }
+
+
+  /*
+    EXEMPLOS EM SALA 
+
+    -- gera um número aleatório entre 0 e 4.999999 e depois arredonda para pegar somente o número inteiro 
+      - esse cenário impacta o valor das extremidades, afinal:
+        - arredonda para ZERO (0) somente caso caia 0.4999 ou menos (possui intervalo menor);
+        - arredonda para UM (1) caso caia 0.5 até 1.4999;
+        - arredonda para DOIS (2) caso caia 1.5 até 2.4999;
+        - arredonda para TRÊS (3) caso caia 2.5 até 3.4999;
+        - arredonda para QUATRO (4) caso caia 3.5 até 4.4999;
+        - arredonda para CINCO (5) somente caso caia 4.5 ou mais (possui intervalo menor);
+    
+      var aleatorio = Number((Math.random() * 5).toFixed(0))
+
+
+      
+    ** estrutura de repetição para gerar entre 1 e 5;
+      - evite essa sintaxe, pois impacta o processamento do código;
+      - como o número é aleatório, há a possibilidade de gerar um número menor que 1 infinitamente, nunca passando na validação;
+      - opte por usar um cálculo matemático para alterar o valor do número aleatório, invés de "gerar novamente"
+
+      var aleatorio = Math.random() * 5;
+      while (aleatorio < 1) {
+          aleatorio = Math.random() * 5
+      } 
+      console.log("aleatório: ", aleatorio)
+
+
+      
+    -- função que invoca a si mesmo após validar se o número gerado atualmente é menor que 0, criando um "looping" caso caia sempre no 0
+      - evite essa sintaxe, pois impacta o processamento do código;
+      - como o número é aleatório, há a possibilidade de gerar um número menor que 1 infinitamente, nunca passando na validação;
+      - opte por usar um cálculo matemático para alterar o valor do número aleatório, invés de "gerar novamente"
+
+      function gerar_aleatorio () {
+          var aleatorio = Math.random() * 5
+          if (aleatorio < 1) {
+              gerar_aleatorio();
+          } else {
+              console.log("aleatório: " + aleatorio)
+          }
+      }
+
+  */
+</script>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            background-color: rgb(240, 240, 240);
+            width: 100%;
+            height: 100%;
+        }
+
+        .card {
+            margin-left: 27rem;
+            padding: 0% 1% 1% 1%;
+            align-items: center;
+            justify-content: center;
+            color: darksalmon;
+            border: 2px solid blue;
+        }
+
+        .card button {
+            color: brown;
+            border: 2px solid darkorange;
+        }
+
+        .card frase {
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card" id="card1">
+        <h2>Analíse de Perfomance de Alunos - Registro</h2><br>
+        Entre com o Nome do Aluno: <input id="input_aluno"><br>
+        Entre com a Nota do Aluno: <input id="input_nota"><br><br>
+        <button onclick="registrar()">Registrar</button>
+        <button onclick="analisar()">Analisar</button><br><br>
+        <div class="frase" id="div_frase"></div>
+    </div>
+</body>
+
+</html>
+<script>
+    listaAluno = []
+
+    function registrar() {
+
+        var NomeAluno = input_aluno.value;
+        var NotaAluno = Number(input_nota.value);
+
+        if (NomeAluno != '' || NomeAluno != undefined) {
+            if (NotaAluno < 11 && NotaAluno > -1 && NotaAluno == undefined) {
+
+                var Aluno = {
+                    Nome: NomeAluno,
+                    Nota: NotaAluno
+                }
+                listaAluno.push(Aluno);
+
+                div_frase.innerHTML = ``
+
+                for (var i = listaAluno.length - 1; i >= 0; i--) {
+                    div_frase.innerHTML += `
+
+                    Nome:${listaAluno[i].Nome} <br>
+                    Nota:${listaAluno[i].Nota}<br><br>`
+
+                }
+            } else {
+                alert("Nota tem que ser entre 0 e 10")
+            }
+        } else {
+            alert("Nome não inserido ou indefinido")
+        }
+    }
+
+    function analisar() {
+
+        card1.innerHTML = `<h2>Analíse de Perfomance de Alunos - Pesquisa</h2><br>
+            Entre o intervalo de Notas: <input placeholder="De" id="input_de">
+            <input placeholder="Até"id="input_ate"><br><br><br>
+            <button onclick="pesquisar()">Pesquisar</button><br><br>
+            <div id="div_frase"></div>
+            `
+    }
+    
+    function pesquisar() {
+        
+        var de = Number(input_de.value)
+        var ate = Number(input_ate.value)
+
+            if (de <= 10 || de > 0 || de == undefined ||
+                ate <= 10 || ate > 0 || ate == undefined || de < ate) {
+
+                var AlunoIntervalo = 0;
+                var SomaDasNotas = 0;
+                var MaiorNota =
+
+                div_frase.innerHTML = `a`
+
+                for (var i = 0; i < listaAluno.length; i += 1) {
+
+                    var AlunoAtual = listaAluno[i];
+                    if (AlunoAtual.Nota >= de && AlunoAtual <= ate) {
+
+                        AlunoIntervalo += 1;
+                        SomaDasNotas += AlunoAtual.Nota
+                        div_frase.innerHTML += `
+                
+                Total de alunos registrados: ${listaAluno.length}
+
+                Total de alunos listado: ${Aluno}
+
+                Maior Nota = 99,9 
+
+                Menor Nota = 99,9
+
+                Média da Nota = 99,9    
+                `
+                    }
+                }
+            } else {
+                alert(
+                    "Campo “de” tem que estar entre 0 e 10, campo “até” tem que estar entre 0 e 10 e o campo “de” tem que ser menor ou igual ao campo “até”"
+                    )
+            }
+        }
+</script>

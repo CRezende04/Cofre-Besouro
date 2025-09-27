@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="sortear()">Sortear Time</button><br>
+    <div id="div_frase"></div>
+</body>
+</html>
+<script>
+    function sortear() {
+
+    var numero = Math.random() * 4
+        console.log(numero)
+
+    if (numero <= 1) {
+        div_frase.innerHTML = `<img style="height: 150px;" src="imgs/sp.jpg" alt="">`;
+    }   else if (numero <= 2)  {
+        div_frase.innerHTML = `<img style="height: 150px;" src="imgs/corithians.jpg" alt="">`;
+    }   else if (numero <= 3)  {
+        div_frase.innerHTML = `<img style="height: 150px;" src="imgs/palmeiras.webp" alt="">`;
+    }   else    {
+        div_frase.innerHTML = `<img style="height: 150px;" src="imgs/santos.png" alt="">`;
+    }   
+}
+</script>

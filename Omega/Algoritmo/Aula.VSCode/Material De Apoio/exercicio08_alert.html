@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Nome do guerreiro: 
+    <input id="input_nome_guerreiro"><br>
+    Ki normal:
+    <input id="input_ki_normal"><br>
+    <button onclick="ver_ki()">
+        Ver ki em cada forma
+    </button>
+</body>
+</html>
+<script>
+
+    function ver_ki() {
+        var nomeGuerreiro = input_nome_guerreiro.value;
+        var kiNormal = Number(input_ki_normal.value);
+
+        var kiSSJ = kiNormal * 50;
+        var kiSSJ2 = kiNormal * 100;
+
+        // var frase = "Guerreiro: " + nomeGuerreiro + " ki: ";
+
+        var frase = `
+            Guerreiro: ${nomeGuerreiro} ki:
+        `;
+
+        alert(frase + kiSSJ);
+
+        alert(frase + kiSSJ2);
+    }
+
+</script>

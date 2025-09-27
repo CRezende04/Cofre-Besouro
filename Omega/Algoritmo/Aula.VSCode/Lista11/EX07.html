@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira numeros entre 20 e 100: <input id="input_number">
+    <button onclick="calcular()">Adoro Multiplos de 5</button>
+    <div id="div_conta"></div>
+</body>
+</html>
+<script>
+    function calcular() {
+    var numero = Number(input_number.value);
+    var contador = 5
+        while (contador <= numero) {
+            div_conta.innerHTML += `${contador} <br>`
+            contador += 5;
+        }
+    }
+</script>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Qual a Tabuada de 2 a 9:<input min="2" max="9" type="number" id="input_tab">
+    Ate que numero:<input type="number"id="input_numero">
+    <button onclick="verificar()">Ver Tabuada</button>
+    <div id="div_frase"></div>
+</body>
+</html>
+<script>
+    function verificar() {
+        var tabuada = Number(input_tab.value)
+        var numero = Number(input_numero.value)
+        var contador = 0;
+        while (contador <= numero) {
+            var resultado = tabuada * contador
+            div_frase.innerHTML += `<b style="color:blue">${tabuada} x ${contador} = ${resultado}</b> <br>`
+            div_frase.innerHTML += `<b style="color:red">${tabuada} x ${contador} = ${resultado}</b> <br>`
+            contador ++; 
+        }
+    }
+</script>

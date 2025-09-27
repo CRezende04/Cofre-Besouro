@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    De quantos em quantos dias você vai pra academia:<input id="input_academia">
+    <button onclick="exibir()">Exibir rotina mensal</button>
+    <div id="div_frase"></div>
+</body>
+</html>
+<script>
+    function exibir() {
+        var academia = Number(input_academia.value)
+        var contador = 1;
+        div_frase.innerHTML = "";
+        while (contador <= 30) {
+            if (contador % academia == 1 ) {
+            div_frase.innerHTML += ` Dia ${contador} - Musculação <br>`
+            }
+            else {
+                div_frase.innerHTML += `Dia ${contador * academia} - Comer,Dormir etc <br>`
+            }
+            contador ++;
+        }
+    }
+</script>

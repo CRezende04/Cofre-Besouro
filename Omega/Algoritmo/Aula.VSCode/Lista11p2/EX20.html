@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quantos depósitos voçê fez:<input id="input_deposito">
+    Valor de cada depósito: <input id="input_valor">
+    <button onclick="verificar()">Acompanhar grana</button>
+    <div id="div_frase"></div>
+</body>
+</html>
+<script>
+    function verificar() {
+        var deposito = Number(input_deposito.value)
+        var valor = Number(input_valor.value)
+        var total = 0
+        div_frase.innerHTML = ""
+        for (contador = 1;
+            contador <= deposito;
+            contador ++) {
+                total += valor
+                div_frase.innerHTML += `
+                ${contador}º Mês: ${total}<br>`
+
+            }
+            div_frase.innerHTML += `Total guardado: ${total}`
+        }
+</script>

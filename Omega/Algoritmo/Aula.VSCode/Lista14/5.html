@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5</title>
+</head>
+<body>
+    <button onclick="botaoJogarJoguinho()">
+        Jogar
+    </button>
+
+    <div id="div_exibirResultadoDoJogo">
+
+    </div>
+</body>
+</html>
+
+<script>
+    function botaoJogarJoguinho() {
+        var numeroAleatorio = (min, max) => Math.random() * (max - min) + min;
+
+        if (numeroAleatorio(0, 4) <= 1) {
+            div_exibirResultadoDoJogo.innerHTML = `<img style="height:200px;" src="https://th.bing.com/th/id/OIP.bztTF-zJ_1g2F3IxjXfHmgHaEo?w=271&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7" alt="">`;
+        }   else if (numeroAleatorio(0, 4) <= 2)  {
+            div_exibirResultadoDoJogo.innerHTML = `<img style="height:200px;" src="https://2.bp.blogspot.com/-LN96HrZ9IO4/WelbuuXu4wI/AAAAAAAALHg/Ki7O71QtGj8mafMvdqoJhV-sOdQNDDZDQCPcBGAYYCw/s1600/papel_pautado_a4.png" alt="">`;
+        }   else    {
+            div_exibirResultadoDoJogo.innerHTML = `<img style="height:200px;" src="https://http2.mlstatic.com/tesoura-prof-jaguar-fio-laser-barbeiro-cabeleireiro-preta-D_NQ_NP_915656-MLB27607222309_062018-F.jpg" alt="">`;
+        }
+    }
+
+</script>

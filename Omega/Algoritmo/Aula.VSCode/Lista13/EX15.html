@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Nome do Produto:<input id="input_produto"><br>
+    Preço do Produto:<input id="input_preco"><br>
+    <button onclick="cadastrar()">Cadastrar</button><br>
+    <button onclick="exibirrelatorio()">Exibir Relatorio</button>
+    <div id="div_frase"></div>
+</body>
+
+</html>
+<script>
+
+        var listaNomeProdutos = []
+        var listaPrecoProduto = []
+
+        function cadastrar() {
+
+            var produto = input_produto.value
+            var preco = Number(input_preco.value)
+
+            listaNomeProdutos.push(produto)
+            listaPrecoProduto.push(preco)
+        }
+
+        function exibirrelatorio() {
+
+            var nomeProdutoCaro = "";
+            var nomeProdutobarato = "";
+            var somaPrecosProdutos = 0;
+            var mediaPrecoProdutos = Number((listaPrecoProduto.length * listaPrecoProduto.length) / 2);
+            var precoMaisCaro = 0;
+            var precoMaisBarato = listaPrecoProduto[0];
+
+            div_frase.innerHTML = `
+
+            Total de Produtos: ${listaNomeProdutos.length} <br><br>`
+
+            for (var i = 0;
+                i <= listaNomeProdutos.length - 1;
+                i++) {
+
+                div_frase.innerHTML += `
+                
+                Produto ${i + 1} : ${listaNomeProdutos[i]} <br>
+                Preco de Compra: R$${listaPrecoProduto[i]}. Vender por RS${listaPrecoProduto[i] * 1.25}<br><br>`
+
+                somaPrecosProdutos += listaPrecoProduto[i];
+
+                if (listaPrecoProduto[i] > precoMaisCaro) {
+
+                    precoMaisCaro = listaPrecoProduto[i];
+                    nomeProdutoCaro = listaNomeProdutos[i];
+                }
+                if (listaPrecoProduto[i] < precoMaisBarato) {
+
+                    precoMaisBarato = listaPrecoProduto[i];
+                    nomeProdutobarato = listaNomeProdutos[i];
+
+                }
+            }
+
+            div_frase.innerHTML += `
+
+                Produto mais caro ${nomeProdutoCaro} <br>
+                Produto mais barato ${nomeProdutobarato} <br>
+                Soma dos Preços RS${somaPrecosProdutos}<br>
+                Media de Preço R$${somaPrecosProdutos / listaPrecoProduto.length} <br>`
+
+        }
+    </script>

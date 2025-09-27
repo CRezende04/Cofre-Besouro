@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2</title>
+</head>
+<body>
+    <button onclick="botaoSortearTime()">
+        Sortear time
+    </button>
+
+    <div id="div_exibirEscudosDosTimes">
+
+    </div>
+</body>
+</html>
+
+<script>
+    function botaoSortearTime() {
+       
+        var numeroAleatorio = (min, max) => Math.random() * (max - min) + min;
+
+        console.log(numeroAleatorio(0, 5));
+
+        if (numeroAleatorio(0, 5) <= 1) {
+            div_exibirEscudosDosTimes.innerHTML = `<img style="height: 150px;" src="https://i.pinimg.com/originals/cc/03/43/cc03439e7981c29c81590a7eb184ed0a.jpg" alt="">`;
+        }   else if (numeroAleatorio(0, 5) <= 2)  {
+            div_exibirEscudosDosTimes.innerHTML = `<img style="height: 150px;" src="https://2.bp.blogspot.com/-Y3GV9R9-IhQ/T4OwABQ3CBI/AAAAAAAADI8/SPQtFa8fjxI/s1600/Escudo+do+Corinthians+08.jpg" alt="">`;
+        }   else if (numeroAleatorio(0, 5) <= 3)  {
+            div_exibirEscudosDosTimes.innerHTML = `<img style="height: 150px;" src="https://i.pinimg.com/originals/b1/12/6e/b1126ed863c79e34a8fbdb940261a625.jpg" alt="">`;
+        }   else    {
+            div_exibirEscudosDosTimes.innerHTML = `<img style="height: 150px;" src="https://atualfm.com.br/wp-content/uploads/2019/10/escudosantos02.jpg" alt="">`;
+        }   
+    }
+
+</script>

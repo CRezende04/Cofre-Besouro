@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    Você já clicou <span id="span_numero">0</span> vezes <br />
+    <button onclick="aumentar()">Aumentar em 1</button>
+  </body>
+</html>
+<script>
+//   function aumentar() {
+//     var numero = Number(span_numero.innerHTML);
+//     numero += 1;
+//     span_numero.innerHTML = numero;
+//   }
+
+  var cliques = 0;
+  function aumentar() {
+    cliques += 1;
+    span_numero.innerHTML = cliques;
+  }
+</script>

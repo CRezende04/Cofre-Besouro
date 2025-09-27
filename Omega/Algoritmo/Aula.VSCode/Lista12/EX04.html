@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Nome do Time 1:<input id="input_nome1"><br>
+    Insira a quantidade de vitórias do time 1:<input id="input_vitorias1"><br>
+    Insira a quantidade de empates do time 1:<input id="input_empates1"><br>
+    Insira a quantidade de derrotas do time 1:<input id="input_derrotas1"><br>
+
+    Nome do Time 2:<input id="input_nome2"><br>
+    Insira a quantidade de vitórias do time 2:<input id="input_vitorias2"><br>
+    Insira a quantidade de empates do time 2:<input id="input_empates2"><br>
+    Insira a quantidade de derrotas do time 2:<input id="input_derrotas2"><br>
+
+    Nome do Time 3:<input id="input_nome3"><br>
+    Insira a quantidade de vitórias do time 3:<input id="input_vitorias3"><br>
+    Insira a quantidade de empates do time 3:<input id="input_empates3"><br>
+    Insira a quantidade de derrotas do time 3:<input id="input_derrotas3"><br>
+    <button onclick="analisar()">Comparar campanhas</button>
+    <div id="div_frase"></div>
+</body>
+
+</html>
+<script>
+    function analisar() {
+        var nome1 = input_nome1.value
+        var vitorias1 = Number(input_vitorias1.value)
+        var empates1 = Number(input_empates1.value)
+        var derrotas1 = Number(input_derrotas1.value)
+        var total1 = vitorias1 + empates1 + derrotas1
+
+        var nome2 = input_nome2.value
+        var vitorias2 = Number(input_vitorias2.value)
+        var empates2 = Number(input_empates2.value)
+        var derrotas2 = Number(input_derrotas2.value)
+        var total2 = vitorias2 + empates2 + derrotas2
+
+        var nome3 = input_nome3.value
+        var vitorias3 = Number(input_vitorias3.value)
+        var empates3 = Number(input_empates3.value)
+        var derrotas3 = Number(input_derrotas3.value)
+        var total3 = vitorias3 + empates3 + derrotas3
+
+        var pontos1 = (times.Vitória * vitorias1) + (times.Empate * empates1)
+        var pontos2 = (times.Vitória * vitorias2) + (times.Empate * empates2)
+        var pontos3 = (times.Vitória * vitorias3) + (times.Empate * empates3)
+
+        var times = {
+            Vitória: 3,
+            Empate: 1,
+            Derrota: 0
+        }
+
+
+
+        if (total1 == total2 && total1 == total3) {
+            div_frase.innerHTML = `
+        Primeiro Lugar - O time ${nome1} terminou o campeonato com ${pontos1} pontos <br><br>
+        Segundo Lugar - O time ${nome2} terminou o campeonato com ${pontos2} pontos <br><br> 
+        Terceiro Lugar - O time ${nome3} terminou o campeonato com ${pontos3} pontos <br><br>`
+            
+        if (pontos1 == pontos2) {
+                div_frase.innerHTML = `
+        Primeiro Lugar - O time ${nome1} terminou o campeonato com ${pontos1} pontos <br><br>
+        Primeiro Lugar - O time ${nome2} terminou o campeonato com ${pontos2} pontos <br><br> 
+        Terceiro Lugar - O time ${nome3} terminou o campeonato com ${pontos3} pontos <br><br>`
+            }
+        }
+        
+        else {
+            alert("Dados Insuficientes")
+        }
+    }
+</script>

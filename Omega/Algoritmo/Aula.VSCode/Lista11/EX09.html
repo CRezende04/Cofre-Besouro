@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira um Numero:<input id="input_numero">
+    Insira uma frase:<input id="input_frase">
+    <button onclick="repetir()">Papagaio</button>
+    <div id="div_frase"></div>
+</body>
+</html>
+<script>
+    function repetir() {
+        var numero = Number(input_numero.value)
+        var frase = input_frase.value
+        var contador = 0 
+        while (contador <= numero) {
+            contador ++;
+        var mensagem = ""
+        var contador2 = 0;
+
+        while (contador2 < numero) {
+            mensagem += `${frase} \n `
+            contador2 ++;
+        }
+        alert (mensagem)
+       }
+    }
+</script>

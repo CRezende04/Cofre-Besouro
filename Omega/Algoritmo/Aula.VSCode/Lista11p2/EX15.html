@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quantidade de Elefantes:<input id="input_elefantes">
+    <button onclick="calcular()">Atazanar a médium</button>
+    <div id="div_frase"></div>
+</body>
+</html>
+<script>
+    function calcular() {
+        var elefantes = Number(input_elefantes.value)
+        var mensagem = "incomodam,";
+        var contagem = 1;
+        div_frase.innerHTML = ""
+        
+        for (var contador = 1;
+            contador <= elefantes;
+            contador += 1){
+                if (elefantes == 1) {
+                    div_frase.innerHTML += `1  elefante incomoda muita gente! <br><br>`
+                }
+                else {mensagem += ' incomodam, '
+                div_frase.innerHTML += `1  elefante incomoda muita gente! <br><br>
+                ${contador+1} elefantes, ${mensagem} muito mais! <br><br>`
+            }
+        }
+    }
+</script>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="dado()">jogar dado</button>
+    <div id="div_frase"></div>
+</body>
+</html>
+<script>
+    function dado() {
+    var numero = Math.random() * 7
+    var valor = parseInt(numero)
+    if (valor == 6){
+        div_frase.innerHTML = `<img src="imgs/lado_6.png">`
+    } else if (valor == 5){
+        div_frase.innerHTML = `<img src="imgs/lado_5.gif">`
+    } else if (valor == 4){
+        div_frase.innerHTML = `<img src="imgs/lado_4.gif">`
+    } else if (valor == 3){
+        div_frase.innerHTML = `<img src="imgs/lado_3.gif">`
+    } else if (valor == 2){
+        div_frase.innerHTML = `<img src="imgs/lado_2.gif">`
+    } else {
+        div_frase.innerHTML = `<img src="imgs/lado_1.gif">`
+    }
+}
+</script>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Digite um número qualquer:<input id="input_qualquer">
+    <button onclick="analisar()">Analisar histórico</button>
+    <div id="div_frase"></div>
+</body>
+
+</html>
+<script>
+
+    var listaNumeros = []
+
+    function analisar() {
+
+        var numero = Number(input_qualquer.value);
+        listaNumeros.push(numero);
+        var MaiorNumero = 0;
+        var MenorNumero = listaNumeros[0];
+
+        div_frase.innerHTML = "";
+
+        for (var i = 0; i <= listaNumeros.length - 1; i++) {
+
+            div_frase.innerHTML += `
+            
+            ${i + 1}º Número: ${listaNumeros[i]} <br><br>`
+
+            if (listaNumeros[i] > MaiorNumero) {
+
+                MaiorNumero = listaNumeros[i];
+
+            }
+            if (listaNumeros[i] < MenorNumero) {
+
+                MenorNumero = listaNumeros[i];
+
+            }
+        }
+
+        div_frase.innerHTML += `
+
+            Maior: ${MaiorNumero} <br><br>
+            Menor: ${MenorNumero} <br><br>`
+
+    }
+</script>

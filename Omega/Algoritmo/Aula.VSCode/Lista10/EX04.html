@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Idade:<input id="input_idade">
+    <button onclick="verificar()">Irformar</button>
+    <div id="div_frase"></div>
+</body>
+</html>
+<script>
+    function verificar() {
+        var idade = Number(input_idade.value)
+        var infancia = idade >= 12
+        var adolescencia = idade >= 18
+        var idoso = idade >= 65
+        if (idoso) {
+            div_frase.innerHTML = `
+            Já passou pela infância: True <br>
+            Já passou pela adolescência: True <br>
+            Já é um idoso: True <br>
+            TOTAL DE PONTOS: 80 `
+        }
+        else if (adolescencia) {
+            div_frase.innerHTML = `
+            Já passou pela infância: True <br>
+            Já passou pela adolescência: True <br>
+            Já é um idoso: False <br>
+            TOTAL DE PONTOS: 30 `
+        }
+        else if (infancia) {
+            div_frase.innerHTML = `
+            Já passou pela infância: True <br>
+            Já passou pela adolescência: False <br>
+            Já é um idoso: False <br>
+            TOTAL DE PONTOS: 10 `
+        }    
+        else {
+            div_frase.innerHTML = `
+            Já passou pela infância: False <br>
+            Já passou pela adolescência: False <br>
+            Já é um idoso: False <br>
+            TOTAL DE PONTOS: 0 `
+        }
+    }
+</script>

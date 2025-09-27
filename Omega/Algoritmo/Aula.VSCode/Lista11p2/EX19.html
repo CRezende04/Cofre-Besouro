@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quantas xícaras de café com leite voçê já tomou na vida: <input id="input_qtdCafe">
+    <button onclick="verificar()">Ver a quantidade</button>
+    <div id="div_frase"></div>
+</body>
+</html>
+<script>
+    function verificar() {
+        var qtdCafe = Number(input_qtdCafe.value);
+        var leite = `<img src="https://bolosparavender.com.br/wp-content/uploads/2020/08/fazer-bolo-com-leite-em-po-da-certo-como-fazer.jpg", heigth="10%", width="10%">`
+        var cafe =  `<img src="https://img.freepik.com/fotos-premium/cafe-em-po-na-colher-de-madeira-em-branco_253984-1697.jpg", heigth="10%", width="10%">`
+        for (contador = 1;
+            contador <= qtdCafe;
+            contador += 1){
+                div_frase.innerHTML += `${leite}`
+                    for (contador1 = 1;
+                        contador1 < 2;
+                        contador1 ++){
+                    div_frase.innerHTML += `${cafe}`
+                    div_frase.innerHTML += `${cafe}<br><br>`
+                }
+            }
+    }
+</script>

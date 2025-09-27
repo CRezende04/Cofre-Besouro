@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Peso:<input id="input_peso">
+    Altura:<input id="input_altura">
+    <button onclick="verificar()">verificar IMC</button>
+    <div id="div_frase"></div>
+</body>
+</html>
+<script>
+    function verificar() {
+        var peso = Number(input_peso.value)
+        var altura = Number(input_altura.value)
+        var invalido = peso == "" || altura == ""
+        var altmetros = altura;
+        if (altura > 3) {
+            altmetros = altura / 100;
+        }
+        var imc = peso/(altmetros * altmetros);
+       
+        if (invalido) {
+            alert("Incerir dados nos campos")
+        }
+        else if (imc < 18.5) {
+            div_frase.innerHTML = `<b style="color: blue">Abaixo do Peso </b>`
+        }
+        else if (imc <= 24.9) { 
+            div_frase.innerHTML = `<b style="color: green">Peso Ideal</b>`
+        }
+        else if (imc <= 29.9) {
+            div_frase.innerHTML = `<b style="color: yellow">Excesso de Peso</b>`
+        }
+        else if (imc <= 35) {
+            div_frase.innerHTML = `<b style="color: orange">Obesidade</b>` 
+        }
+        else {
+            div_frase.innerHTML = `<b style="color: red">Obesidade Extrema</b>`
+        }
+    }
+</script>
