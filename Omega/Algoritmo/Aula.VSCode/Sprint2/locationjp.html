@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Localização</title>
+    <link rel="stylesheet" href="locationjp.css">
+    <script src="https://kit.fontawesome.com/c52875e8e8.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="light_mode">
+    <section class="main">
+        <div class="sidebar light_mode">
+            <img src="imagens/logo.png" class="logomarca" onclick="redirecionar_home()">
+            <ul>
+                <li><a href="Dashboard_inicial.html" class="sidebar_active"> <i class="fa-solid fa-chart-simple fa-lg"></i>Gráficos</a></li>
+                <li><a href="Dashboard_localizacao.html"><i class="fa-solid fa-location-dot fa-lg"></i>Localização</a></li>
+                <li><a href="Dashboard_cofig.html"><i class="fa-solid fa-gear fa-lg"></i>Configurações</a></li>
+            </ul>
+
+        </div>
+        <div class="caixa_maior">
+            <header class="light_mode">
+                <h2>Localização</h2>
+                <div class="lateral_icones">
+                    <div class="icone light_mode" onclick="mudar_tema_claro()" id="div_sol"><i class="fa-solid fa-sun"></i></i></div>
+                    <div class="icone light_mode" onclick="mudar_tema_escuro()" id="div_lua"><i class="fa-solid fa-moon"></i></div>
+                    <div class="icone light_mode"><img src="Imagens/help.png" alt=""></div>
+                    <div class="icone light_mode"><img src="Imagens/notification.png" alt=""></div>
+                    <div class="user">
+                        <div class="circulo"></div>
+                        <h4>Swift</h4>
+                    </div>
+                </div>
+            </header>
+            <section class="lista_local">
+                <div class="tabela light_mode" id="div_tabela">
+                    <h3 class="titulo">Endereços</h3>
+                    <hr class="fechamento">
+                    <table>
+                        <tr>
+                            
+                            <td class="lateral">
+                                <img src="Imagens/location_map_pin_mark_icon_148685.png" alt="">
+                                <h4 id="local_1">Rua Aquidaban, 301 - Fundação, São Caetano do Sul - SP, 09520-180</h4>
+                            </td>
+                            <td class="botao_tabela"><button onclick="procurar_1()">Localizar</button></td>
+                        </tr>
+                        <tr>
+                            <td class="lateral">
+                                <img src="Imagens/location_map_pin_mark_icon_148685.png" alt="">
+                                <h4 id="local_2">Rua Orfanato, 162 - C 164 - Vila Prudente, São Paulo - SP, 03131-010
+                                </h4>
+                            </td>
+                            <td class="botao_tabela"><button onclick="procurar_2()">Localizar</button></td>
+                        </tr>
+                        <tr>
+                            <td class="lateral">
+                                <img src="Imagens/location_map_pin_mark_icon_148685.png" alt="">
+                                <h4 id="local_3">Rua Bom Pastor, 2260 - Ipiranga, São Paulo - SP, 04203-002</h4>
+                            </td>
+                            <td class="botao_tabela"><button onclick="procurar_3()">Localizar</button></td>
+                        </tr>
+                        <tr>
+                            <td class="lateral">
+                                <img src="Imagens/location_map_pin_mark_icon_148685.png" alt="">
+                                <h4 id="local_4">Av. Zelina, 990 - Vila Zelina, São Paulo - SP, 03143-002</h4>
+                            </td>
+                            <td class="botao_tabela"><button onclick="procurar_4()">Localizar</button></td>
+                        </tr>
+                        <tr>
+                            <td class="lateral">
+                                <img src="Imagens/location_map_pin_mark_icon_148685.png" alt="">
+                                <h4 id="local_5">Rua Oswaldo Cruz, 118 - Santa Paula, São Caetano do Sul - SP, 09541-270
+                                </h4>
+                            </td>
+                            <td class="botao_tabela"><button onclick="procurar_5()">Localizar</button></td>
+                        </tr>
+                        <tr>
+                            <td class="lateral">
+                                <img src="Imagens/location_map_pin_mark_icon_148685.png" alt="">
+                                <h4 id="local_6">Av. do Cursino, 817 - Vila da Saúde, São Paulo - SP, 04133-000</h4>
+                            </td>
+                            <td class="botao_tabela"><button onclick="procurar_6()">Localizar</button></td>
+                        </tr>
+                        <tr>
+                            <td class="lateral">
+                                <img src="Imagens/location_map_pin_mark_icon_148685.png" alt="">
+                                <h4 id="local_7">Av. Conselheiro Rodrigues Alves, 463 - Vila Mariana, São Paulo - SP,
+                                    04014-011</h4>
+                            </td>
+                            <td class="botao_tabela"><button onclick="procurar_7()">Localizar</button></td>
+                        </tr>
+                        <tr>
+                            <td class="lateral">
+                                <img src="Imagens/location_map_pin_mark_icon_148685.png" alt="">
+                                <h4 id="local_8">Rua Carneiro da Cunha, 410 - Vila da Saúde, São Paulo - SP, 04144-000
+                                </h4>
+                            </td>
+                            <td class="botao_tabela"><button onclick="procurar_8()">Localizar</button></td>
+                        </tr>
+                        <tr>
+                            <td class="lateral">
+                                <img src="Imagens/location_map_pin_mark_icon_148685.png" alt="">
+                                <h4 id="local_9">Av. Paes de Barros, 1889 - Alto da Mooca, São Paulo - SP, 03115-001
+                                </h4>
+                            </td>
+                            <td class="botao_tabela"><button onclick="procurar_9()">Localizar</button></td>
+                        </tr>
+                        <tr>
+                            <td class="ultima lateral">
+                                <img src="Imagens/location_map_pin_mark_icon_148685.png" alt="">
+                                <h4 id="local_10">Av. Dr. Ricardo Jafet, 1501 - Vila São José, São Paulo - SP, 04260-020
+                                </h4>
+                            </td>
+                            <td class="ultima botao_tabela"><button onclick="procurar_10()">Localizar</button></td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
+        </div>
+</body>
+
+</html>
+<script>
+
+    const sol = document.getElementById('div_sol');
+    const lua = document.getElementById('div_lua');
+    
+
+    div_sol.addEventListener('click', () => {
+        localStorage.setItem('tema', 'light_mode');
+    });
+
+    div_lua.addEventListener('click', () => {
+        localStorage.setItem('tema', 'dark_mode');
+    }); 
+
+    const tema = localStorage.getItem('tema');
+    const divs = document.querySelectorAll('.light_mode');
+    var l2_divs = 0
+    var d2_divs = 0
+
+
+    if (tema === 'light_mode') {
+        for(num_divs= 0; num_divs <divs.length; num_divs ++) {
+        divs[num_divs].classList.remove('dark_mode')
+        divs[num_divs].classList.add('light_mode')
+      }
+    } else if (tema === 'dark_mode') {
+        for(num_divs= 0; num_divs <divs.length; num_divs ++) {
+        divs[num_divs].classList.remove('light_mode')
+        divs[num_divs].classList.add('dark_mode')
+      }
+    }
+
+    function mudar_tema_escuro(){
+      if (d2_divs == 0) {
+      for(num_divs= 0; num_divs <divs.length; num_divs ++) {
+        divs[num_divs].classList.remove('light_mode')
+        divs[num_divs].classList.add('dark_mode')
+      }
+      d2_divs = document.querySelectorAll('.dark_mode');
+    } else {
+      for(num_divs= 0; num_divs <d2_divs.length; num_divs ++) {
+        d2_divs[num_divs].classList.remove('light_mode')
+        d2_divs[num_divs].classList.add('dark_mode')
+      }
+    }
+    }
+
+    function mudar_tema_claro() {
+      if (l2_divs == 0) {
+      for(num_divs= 0; num_divs <divs.length; num_divs ++) {
+        divs[num_divs].classList.remove('dark_mode')
+        divs[num_divs].classList.add('light_mode')
+      }
+      l2__divs = document.querySelectorAll('.light_mode');
+     } else {
+      for(num_divs = 0; num_divs <d2_divs.length; num_divs ++) {
+      l2_divs[num_divs].classList.add('light_mode')
+      l2_divs[num_divs].classList.remove('dark_mode')     
+    }
+  }
+  }
+
+    function procurar_1() {
+        div_tabela.innerHTML = `
+                    <h3 class="titulo">Endereços</h3>
+                    <hr class="fechamento">
+                    <h4>Rua Aquidaban, 301 - Fundação, São Caetano do Sul - SP, 09520-180</h4>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d29256.12829691242!2d-46.6278628!3d-23.5678675!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5b006f30c23b%3A0xac79b6e80cac2d9f!2sSwift!5e0!3m2!1spt-BR!2sbr!4v1681512443340!5m2!1spt-BR!2sbr" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> 
+                    <button onclick="voltar()" class="voltar">Voltar</button>    
+                        `
+    }
+    function procurar_2() {
+        div_tabela.innerHTML = `
+                    <h3 class="titulo">Endereços</h3>
+                    <hr class="fechamento">
+                    <h4>Rua Orfanato, 162 - C 164 - Vila Prudente, São Paulo - SP, 03131-010</h4>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.656021448247!2d-46.58356680000001!3d-23.5807945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5c0e2a0b38b7%3A0xcfbad1588c7993de!2sRua%20Orfanato%2C%20162%20-%20Vila%20Prudente%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2003131-010!5e0!3m2!1spt-BR!2sbr!4v1681513562690!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> 
+                    <button onclick="voltar()" class="voltar">Voltar</button>    
+                        `
+    }
+    function procurar_3() {
+        div_tabela.innerHTML = `
+                    <h3 class="titulo">Endereços</h3>
+                    <hr class="fechamento">
+                    <h4>Rua Bom Pastor, 2260 - Ipiranga, São Paulo - SP, 04203-002</h4>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.2177945941107!2d-46.6062553!3d-23.5965208!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5b933b8dc83b%3A0x8ba7d544941f9248!2sR.%20Bom%20Pastor%2C%202260%20-%20Ipiranga%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2004203-002!5e0!3m2!1spt-BR!2sbr!4v1681513583408!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <button onclick="voltar()" class="voltar">Voltar</button>    
+                        `
+    }
+    function procurar_4() {
+        div_tabela.innerHTML = `
+                    <h3 class="titulo">Endereços</h3>
+                    <hr class="fechamento">
+                    <h4>Av. Zelina, 990 - Vila Zelina, São Paulo - SP, 03143-002</h4>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.388879157611!2d-46.574340299999996!3d-23.5903824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5c69e0cae951%3A0x848d9df708535c5c!2sAv.%20Zelina%2C%20990%20-%20Vila%20Prudente%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2003143-002!5e0!3m2!1spt-BR!2sbr!4v1681513597661!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <button onclick="voltar()" class="voltar">Voltar</button>    
+                        `
+    }
+    function procurar_5() {
+        div_tabela.innerHTML = `
+                    <h3 class="titulo">Endereços</h3>
+                    <hr class="fechamento">
+                    <h4>Rua Oswaldo Cruz, 118 - Santa Paula, São Caetano do Sul - SP, 09541-270</h4>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3655.63613242247!2d-46.568062600000005!3d-23.6173792!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5ce96d379303%3A0x53549c10d1435034!2sRua%20Oswaldo%20Cruz%2C%20118%20-%20Santa%20Paula%2C%20S%C3%A3o%20Caetano%20do%20Sul%20-%20SP%2C%2009541-270!5e0!3m2!1spt-BR!2sbr!4v1681513618638!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <button onclick="voltar()" class="voltar">Voltar</button>    
+                        `
+    }
+    function procurar_6() {
+        div_tabela.innerHTML = `
+                    <h3 class="titulo">Endereços</h3>
+                    <hr class="fechamento">
+                    <h4>Av. do Cursino, 817 - Vila da Saúde, São Paulo - SP, 04133-000</h4>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3655.8472174844214!2d-46.617136200000004!3d-23.60981169999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5ba359367a07%3A0x7592731f5de844c2!2sAv.%20do%20Cursino%2C%20817%20-%20Vila%20da%20Sa%C3%BAde%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2004133-000!5e0!3m2!1spt-BR!2sbr!4v1681513634250!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <button onclick="voltar()" class="voltar">Voltar</button>    
+                        `
+    }
+    function procurar_7() {
+        div_tabela.innerHTML = `
+                    <h3 class="titulo">Endereços</h3>
+                    <hr class="fechamento">
+                    <h4 >Av. Conselheiro Rodrigues Alves, 463 - Vila Mariana, São Paulo - SP, 04014-011</h4>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.5582027309!2d-46.64239320000001!3d-23.584305699999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce598f4cb0896d%3A0x518024a11591ca01!2sAv.%20Conselheiro%20Rodrigues%20Alves%2C%20463%20-%20Vila%20Mariana%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2004014-011!5e0!3m2!1spt-BR!2sbr!4v1681513653213!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <button onclick="voltar()" class="voltar">Voltar</button>    
+                        `
+    }
+    function procurar_8() {
+        div_tabela.innerHTML = `
+                    <h3 class="titulo">Endereços</h3>
+                    <hr class="fechamento">
+                    <h4>Rua Carneiro da Cunha, 410 - Vila da Saúde, São Paulo - SP, 04144-000</h4>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3655.648920677983!2d-46.636686399999995!3d-23.616920799999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5a5221855c6d%3A0xd4686f8be946def2!2sR.%20Carneiro%20da%20Cunha%2C%20410%20-%20Vila%20da%20Sa%C3%BAde%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2004144-000!5e0!3m2!1spt-BR!2sbr!4v1681513679125!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <button onclick="voltar()" class="voltar">Voltar</button>    
+                        `
+    }
+    function procurar_9() {
+        div_tabela.innerHTML = `
+                    <h3 class="titulo">Endereços</h3>
+                    <hr class="fechamento">
+                    <h4>Av. Paes de Barros, 1889 - Alto da Mooca, São Paulo - SP, 03115-001</h4>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.0153187720052!2d-46.58973650000001!3d-23.567893299999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5eabb7e02a91%3A0xb73c51589dca0d18!2sAv.%20Paes%20de%20Barros%2C%201889%20-%20Cambuci%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2003115-001!5e0!3m2!1spt-BR!2sbr!4v1681513667296!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <button onclick="voltar()" class="voltar">Voltar</button>    
+                        `
+    }
+    function procurar_10() {
+        div_tabela.innerHTML = `
+                    <h3 class="titulo">Endereços</h3>
+                    <hr class="fechamento">
+                    <h4>Av. Dr. Ricardo Jafet, 1501 - Vila São José, São Paulo - SP, 04260-020</h4>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.528443749187!2d-46.61800220000001!3d-23.5853738!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5b8f9b8930f3%3A0x56da8e04b9cbb538!2sAv.%20Dr.%20Ricardo%20Jafet%2C%201501%20-%20Vila%20Mariana%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2004260-020!5e0!3m2!1spt-BR!2sbr!4v1681513690750!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <button onclick="voltar()" class="voltar">Voltar</button>    
+                        `
+    }
+    function voltar() {
+        div_tabela.innerHTML = conteudo_inicial;
+    }
+</script>

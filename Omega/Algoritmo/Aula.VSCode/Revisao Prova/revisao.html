@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Quantidade de Macarons: <input id="input_Macarons">
+    Valor da unidade de Macarons: <input id="input_VMacarons"><br><br>
+    Quantidade de Brigadeiros Gourmets: <input id="input_Brigradeiros">
+    Valor da unidade de Brigadeiros Gourmets: <input id="input_VBrigadeiros"><br><br>
+    Quantidade de Cupcakes: <input id="input_Cupcakes">
+    Valor da unidade de Cupcakes: <input id="input_VCupcakes"><br><br>
+    Quantidade de Cheesecakes: <input id="input_Cheesecakes">
+    Valor da unidade de Cheesecakes: <input id="input_VCheesecakes"><br><br>
+    <button onclick="verificar()">Verificar Vendas</button><br>
+    <div id="div_frase"></div>
+    <div id="div_resultado"></div>
+</body>
+
+</html>
+<script>
+    function verificar() {
+        var QTDMacarons = Number(input_Macarons.value)
+        var VMacarons = Number(input_VMacarons.value)
+        var QTDBrigradeiros = Number(input_Brigradeiros.value)
+        var VBrigadeiros = Number(input_VBrigadeiros.value)
+        var QTDCupcakes = Number(input_Cupcakes.value)
+        var VCupcakes = Number(input_VCupcakes.value)
+        var QTDCheesecakes = Number(input_Cheesecakes.value)
+        var VCheesecakes = Number(input_VCheesecakes.value)
+        var totalVendas = VMacarons + VBrigadeiros + VCupcakes + VCheesecakes
+        var QTDTotal = QTDMacarons + QTDBrigradeiros + QTDCupcakes + QTDCheesecakes
+        var NVendas = 1
+        div_frase.innerHTML = ""
+        div_resultado.innerHTML
+
+        if (QTDMacarons != 0 && VMacarons != 0 && QTDBrigradeiros != 0 && VBrigadeiros != 0 && QTDCupcakes != 0 && VCupcakes != 0
+            && QTDCheesecakes != 0 && VCheesecakes != 0) {
+
+        for (var VendasM = 1;
+            VendasM <= QTDMacarons;
+            VendasM++) {
+            div_frase.innerHTML += `VENDAS: ${NVendas++} - <img src="https://images.tcdn.com.br/img/img_prod/712207/essencia_premium_macarons_swet_5434_2_9758e6d96062cc1ba2b219ee1501fe15.png" width="100px" heigth="100px"> - ${VMacarons}<br>`
+        }
+        for (var VendasB = 1;
+            VendasB <= QTDBrigradeiros;
+            VendasB++) {
+            div_frase.innerHTML += `VENDAS: ${NVendas++} -B <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMowk3ozUsXrjPpAxNNng8d2CmUYBDUb5JmQ&usqp=CAU" width="100px" heigth="100px"> - ${VBrigadeiros}<br>`
+        }
+        for (var VendasC = 1;
+            VendasC <= QTDCupcakes;
+            VendasC++) {
+            div_frase.innerHTML += `VENDAS: ${NVendas++} - <img src="https://img.nsctotal.com.br/wp-content/uploads/2022/10/Design-sem-nome_29.png.jpg" width="100px" heigth="100px" - ${VCupcakes}<br><br>`
+        }
+        for (var VendasCH = 1;
+            VendasCH <= QTDCheesecakes;
+            VendasCH++) {
+            div_frase.innerHTML += `VENDAS: ${NVendas++} - <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOhV_cxQ3RgbX1c0661bewsPVfQHdmqemjWA&usqp=CAU" width="100px" heigth="100px" - ${VCheesecakes}<br><br>`
+        }
+        div_resultado.innerHTML += `Com a quantidade de ${QTDMacarons} Macarons, ${QTDBrigradeiros} Brigadeiros, ${QTDCupcakes} Cupcakes e ${QTDCheesecakes} Cheesecakes, a venda totalizará R$${totalVendas}`
+    } else {
+        alert("Dados Invalidos")
+    }
+}
+</script>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Quantidade de Takes:<input id="input_takes">
+    Quantidade Minima de vezes que o Padrão 2 aparece:<input id="input_qtdpadrao2">
+    <button onclick="simulaçao()">Simulação</button>
+    <div id="div_frase"></div>
+    <span id="span_fala"></span>
+</body>
+
+</html>
+<script>
+    function simulaçao() {
+        var QtdTakes = Number(input_takes.value)
+        var QtdPadrao2 = Number(input_qtdpadrao2.value)
+        div_frase.innerHTML = ""
+        span_fala.innerHTML = "vc e foda";
+        for (contador = 1;
+            contador <= QtdTakes;
+            contador++) {
+            if (QtdTakes == 1) {
+                div_frase.innerHTML += `Take ${contador}<br><br>`
+                div_frase.innerHTML += `Hey, Jude, don't make it bad<br>
+Take a sad song and make it better<br>
+Remember to let her into your heart<br>
+Then you can start to make it better<br>
+Hey, Jude, don't be afraid<br>
+You were made to go out and get her<br>
+The minute you let her under your skin<br>
+Then you begin to make it better<br>
+And anytime you feel the pain, Hey, Jude, refrain<br>
+Don't carry the world upon your shoulders<br>
+For well you know that it's a fool<br>
+Who plays it cool<br>
+By making his world a little colder<br>
+Nah,nah,nah,nah,nah,nah,nah,nah,nah, Hey, Jude, don't let me down<br>
+You have found her, now go and get her<br>
+Remember to let her into your heart<br>
+Then you can start to make it better<br>
+So let it out and let it in, Hey, Jude, begin<br>
+You're waiting for someone to perform with<br>
+And don't you know that it's just you, Hey, Jude, you'll do<br>
+The movement you need is on your shoulder<br>
+Nah,nah,nah,nah,nah,nah,nah,nah,nah, Hey, Jude, don't make it bad<br>
+Take a sad song and make it better<br>
+Remember to let her under your skin<br>
+Then you'll begin to make it better, better, better, better, better... oh!<br>
+Nah,nah,nah,nah,nah,nah,nah,nah,nah, Hey, Jude<br><br>`
+            }
+            else {
+                div_frase.innerHTML += `Take ${contador}<br><br>`
+                div_frase.innerHTML += `Hey, Jude, don't make it bad<br> ${span_fala.innerHTML}
+Take a sad song and make it better<br>
+ Remember to let her into your heart<br> 
+ Then you can start to make it better<br>
+ Hey, Jude, don't be afraid<br>
+ You were made to go out and get her<br>
+ The minute you let her under your skin<br>
+ Then you begin to make it better<br>
+ And anytime you feel the pain, Hey, Jude, refrain<br>
+ Don't carry the world upon your shoulders<br>
+ For well you know that it's a fool<br>
+ Who plays it cool<br>
+ By making his world a little colder<br>
+ Nah,nah,nah,nah,nah,nah,nah,nah,nah, Hey, Jude, don't let me down<br>
+ You have found her, now go and get her<br>
+ Remember to let her into your heart<br>
+ Then you can start to make it better<br>
+ So let it out and let it in, Hey, Jude, begin<br>
+ You're waiting for someone to perform with<br>
+ And don't you know that it's just you, Hey, Jude, you'll do<br>
+ The movement you need is on your shoulder<br>
+ Nah,nah,nah,nah,nah,nah,nah,nah,nah, Hey, Jude, don't make it bad<br>
+ Take a sad song and make it better<br>
+ Remember to let her under your skin<br>
+ Then you'll begin to make it better, better, better, better, better... oh!<br>
+ Nah,nah,nah,nah,nah,nah,nah,nah,nah, Hey, Jude<br><br>`
+            } 
+        }
+    }
+</script>

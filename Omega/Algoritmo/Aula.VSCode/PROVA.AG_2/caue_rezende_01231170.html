@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Quantidade de pontos de “energia” que o Naruto tem:<input id="input_QtdEnergia"><br>
+    Quantidade de clones desejada:<input id="input_QtdClones"><br>
+    Quantidade de clones por linha:<input id="input_QtdLinha"><br>
+    <button onclick="criacao_de_clones()">Criar clones</button><br>
+    <div id="div_frase"></div>
+</body>
+
+</html>
+<script>
+    function criacao_de_clones() {
+        var QtdEnergia = Number(input_QtdEnergia.value)
+        var QtdClones = Number(input_QtdClones.value)
+        var QtdLinha = Number(input_QtdLinha.value)
+        div_frase.innerHTML = ""
+
+        if (QtdEnergia >= 20 && QtdEnergia <= 5000 && QtdClones >= 0 && QtdClones <= 250 && QtdLinha > 0) {
+            if (QtdEnergia >= (QtdClones * 20)) {
+                for (var linha = 1;
+                    linha <= QtdLinha;
+                    linha++) {
+                    div_frase.innerHTML += `<br>`
+
+                    for (var Clones = 1;
+                        Clones <= QtdLinha;
+                        Clones++) {
+                        div_frase.innerHTML += `<img src="naruto.png" height="100px">`
+                    }
+                }
+            } else {
+                alert("ERRO NA ENTRADA DE DADOS - Energia tem que ser entre 20 e 5.000. Quantidade de Clones tem que ser entre 0 e 250. Quantidade de Clones por linha tem que ser maior que 0")
+            }
+        }
+    }
+</script>

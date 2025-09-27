@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <h1>Analise de Renda</h1>
+</head>
+<body>
+    Valor do salário:<input id="input_salario"><br>
+    Adicional mensal:<input id="input_mensal"><br>
+    Bônus do usuário:<input id="input_bonus"><br>
+    <button onclick="analisar()">Analisar Minha Renda</button><br>
+    <div id="div_calculo">               </div>
+</body>
+</html>
+<script>
+    function analisar() {
+        var salario = Number(input_salario.value);
+        var mensal = Number(input_mensal.value);
+        var bonus = Number(input_bonus.value);
+        var total = (salario + mensal + bonus); 
+        var IR = (total * 12.5)/100;
+        var INSS = ((total - IR) * 10)/100;
+        var FGTS = ((total - IR)* 8)/100;
+        var liquido = (((total - IR)- INSS)- FGTS);
+        var liquido15 = (liquido * 15)/100;
+        var liquidoano = (liquido15 * 12);
+        var liquido2 = ((total - INSS)- FGTS);
+        var liquido152 = (liquido2 * 15)/100;
+        var liquidoano2 = (liquido152 * 12);
+        
+        if (total >= 10000) { div_calculo.innerHTML = `Com o salário de R$${salario},
+             com adicional de R$${mensal} e bônus de R$${bonus}, você tem: <br>
+             Bruto: R$${total}<br>
+             IR: R$${IR}<br>
+             INSS: R$${INSS}<br>
+             FGTS: R$${FGTS}<br>
+             Líquido: R$${liquido}<br>
+             Com a renda de R$${liquido}, é recomendado poupar R$${liquido15}, 
+             para que em um ano tenha poupado R$${liquidoano}`
+        }
+        if (total > 2500) { if (total < 10000) {div_calculo.innerHTML = `Com o salário de R$${salario},
+             com adicional de R$${mensal} e bônus de R$${bonus}, você tem: <br>
+             Bruto: R$${total}<br>
+             IR: R$0<br>
+             INSS: R$${INSS}<br>
+             FGTS: R$${FGTS}<br>
+             Líquido: R$${liquido2}<br>
+             Com a renda de R$${liquido2}, é recomendado poupar R$${liquido152}, 
+             para que em um ano tenha poupado R$${liquidoano2}`
+        }
+    }
+        if (total < 2500) { div_calculo.innerHTML = `Com o salário de R$${salario},
+             com adicional de R$${mensal} e bônus de R$${bonus}, você tem: <br>
+             Bruto: R$${total}<br>
+             IR: R$0<br>
+             INSS: R$${INSS}<br>
+             FGTS: R$${FGTS}<br>
+             Líquido: R$${liquido2}`
+    }
+}
+</script>

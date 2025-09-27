@@ -1,0 +1,266 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+html,body {height: 100%;}
+
+header{
+    background-color: #f3f3f3;
+    padding: 10px 2%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    margin-top: 8px;
+}
+
+.info-header .logo img{
+    width: 225px;
+    height: 60px;
+    border-radius: 0px;
+    margin: 0 8px;
+}
+
+.logo img {
+    cursor: pointer;
+}
+
+.logo img:hover {
+    opacity: 0.7;
+}
+
+.info-header{
+    color: black;
+    display: flex;
+}
+
+.info-header img{
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    margin: 0 8px;
+}
+
+.info-header svg{
+    margin: 0 10px;
+}
+
+.icons-header {
+    margin-left: 10px;
+}
+
+.main {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    width: 100%;
+    justify-content: space-between;
+}
+.sidebar {
+    width: 15%;
+    height: 100%;
+    background-color: #f3f3f3;
+}
+.sidebar .logomarca {
+    width: 70%;
+    margin: 10% 10% 10% 15%;
+}
+.sidebar hr {
+    margin: 0 5%;
+}
+.sidebar a {
+    display: block;
+    text-decoration: none;
+    margin: 5% 0% 10% 0%;
+    color: #7a7a7a;
+    padding: 8%  0 8% 10%;
+    font-size: 1.2vw;
+    display: flex;
+    align-items: center;
+    height: 50%;
+}
+.sidebar.dark_mode a {
+    color:white;
+}
+
+.sidebar i {
+        width: 10%;
+        margin: 4% 6% 4% 10%;
+}
+
+.sidebar a:hover {
+    background-color: rgb(67, 190, 218);
+    color: black;
+    border-radius: 0px 4px 4px 0px;
+    box-shadow: inset 0 4px 13px -7px rgba(0, 0, 0, 0.3), inset 0 -3px 13px -7px rgba(0, 0, 0, 0.3);
+}
+.content {
+    width: 85%;
+    background-color: rgb(245,245,245);
+    padding: 20px;
+    
+}
+
+.titulo-seccao {
+    border-radius: 10px;
+    background-color: white;
+    padding: 10px;
+}
+
+.titulo-seccao h2 {
+    font-size: 19px;
+
+}
+
+.titulo-seccao p {
+    font-size: 14px;
+
+}
+
+.titulo-seccao svg {
+    color: blue;
+}
+
+.titulo hr{
+    border-color: rgb(240,240,240);
+}
+
+.separator {
+    width: 100%;
+    height: 2px;
+    background-color: rgb(240,240,240);
+}
+
+.sensor1 {
+    margin-top: 15px;
+    border-radius: 10px;
+    background-color: white;
+    padding: 5px;
+}
+
+.sensor1 h2{
+    font-size: 15px;
+
+}
+
+.sensor1 p {
+    font-size: 14px;
+
+}
+
+.sensor1 a > svg {
+    color: blue;
+}
+
+.sensor1 button {
+    background-color: white;
+    border-style: none;
+}
+
+.sensor2 {
+    margin-top: 20px;
+    border-radius: 10px;
+    background-color: white;
+    padding: 5px;
+}
+
+.sensor2 h2{
+    font-size: 15px;
+
+}
+
+.sensor2 p {
+    font-size: 14px;
+
+}
+
+.sensor2 svg {
+    color: blue;
+}
+
+.sensor2 button {
+    background-color: white;
+    border-style: none;
+}
+
+.sensor3 {
+    margin-top: 20px;
+    border-radius: 10px;
+    background-color: white;
+    padding: 5px;
+}
+
+.sensor3 h2{
+    font-size: 15px;
+
+}
+
+.sensor3 p {
+    font-size: 14px;
+
+}
+
+.sensor3 svg {
+    color: blue;
+}
+
+.sensor3 button {
+    background-color: white;
+    border-style: none;
+}
+
+.sensor4 {
+    margin-top: 20px;
+    border-radius: 10px;
+    background-color: white;
+    padding: 5px;
+}
+
+.sensor4 h2{
+    font-size: 15px;
+
+}
+
+.sensor4 p {
+    font-size: 14px;
+
+}
+
+.sensor4 svg {
+    color: blue;
+}
+
+.sensor4 button {
+    background-color: white;
+    border-style: none;
+}
+
+.sensor5 {
+    margin-top: 20px;
+    border-radius: 10px;
+    background-color: white;
+    padding: 5px;
+}
+
+.sensor5 h2{
+    font-size: 15px;
+
+}
+
+.sensor5 p {
+    font-size: 14px;
+
+}
+
+.sensor5 svg {
+    color: blue;
+}
+
+.sensor5 button {
+    background-color: white;
+    border-style: none;
+}
