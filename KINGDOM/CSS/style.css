@@ -1,0 +1,799 @@
+/* ===== MAIN ===== */
+main {
+  background-color: #1a1a1a;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* ===== SEÇÃO BOAS-VINDAS ===== */
+.welcome-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px 100px;
+  background-color: #1a1a1a;
+  border-bottom: 2px solid #d4af37;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.welcome-content {
+  flex: 1;
+  min-width: 300px;
+}
+
+.welcome-content h1 {
+  font-size: 36px;
+  color: #fff;
+  margin-bottom: 20px;
+  line-height: 1.3;
+}
+
+.welcome-content h1 span {
+  color: #d4af37;
+}
+
+.welcome-content p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #ccc;
+  max-width: 600px;
+  margin-bottom: 25px;
+}
+
+.btn-gold {
+  display: inline-block;
+  background-color: transparent;
+  color: #d4af37;
+  border: 2px solid #d4af37;
+  padding: 12px 28px;
+  border-radius: 6px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-gold:hover {
+  background-color: #d4af37;
+  color: #111;
+}
+
+.welcome-image {
+  flex: 1;
+  text-align: center;
+}
+
+.welcome-image video {
+  width: 100%;
+  max-width: 450px;
+  border-radius: 10px;
+  border: 2px solid #d4af37;
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+}
+
+/* ===== SEÇÃO MODALIDADES ===== */
+.modalities-section {
+  background-color: #111;
+  padding: 80px 100px;
+  text-align: center;
+  border-bottom: 2px solid #d4af37;
+}
+
+.modalities-section h2 {
+  font-size: 32px;
+  color: #d4af37;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+/* ===== GRID ===== */
+.modalities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  justify-items: center;
+}
+
+/* ===== CARD ===== */
+.modality-card {
+  position: relative;
+  width: 280px;
+  height: 330px;
+  background-color: #111;
+  border: 1px solid #333;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.modality-card:hover {
+  border-color: #d4af37;
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.25);
+}
+
+/* ===== IMAGEM ===== */
+.modality-card img {
+  position: absolute;
+  bottom: -60%;
+  left: 50%;
+  transform: translateX(-50%) scale(0.9);
+  width: 90%;
+  height: auto;
+  border-radius: 10px;
+  opacity: 0;
+  transition: all 0.7s ease;
+  z-index: 3;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+}
+
+/* ===== CONTEÚDO ===== */
+.modality-content {
+  position: relative;
+  z-index: 4;
+  text-align: center;
+  transition: transform 0.6s ease;
+}
+
+.modality-content h3 {
+  color: #d4af37;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.modality-content p {
+  color: #ccc;
+  font-size: 14px;
+  line-height: 1.6;
+  max-width: 250px;
+}
+
+/* ===== HOVER ===== */
+.modality-card:hover .modality-content {
+  transform: translateY(-70px);
+}
+
+.modality-card:hover img {
+  bottom: 20px;
+  opacity: 1;
+  transform: translateX(-50%) scale(1.05);
+}
+
+/* ===========================================================
+   RESPONSIVIDADE DAS MODALIDADES + WELCOME
+   =========================================================== */
+
+/* === Tablets === */
+@media (max-width: 1024px) {
+  .welcome-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 60px 60px;
+  }
+
+  .welcome-content h1 {
+    font-size: 30px;
+  }
+
+  .welcome-content p {
+    max-width: 100%;
+  }
+
+  .welcome-image img {
+    max-width: 400px;
+  }
+
+  .modalities-section {
+    padding: 60px 60px;
+  }
+}
+
+/* === Mobile (até 768px) === */
+@media (max-width: 768px) {
+  .welcome-section {
+    padding: 50px 30px;
+  }
+
+  .welcome-content h1 {
+    font-size: 26px;
+  }
+
+  .btn-gold {
+    padding: 10px 20px;
+    font-size: 13px;
+  }
+
+  .welcome-image img {
+    max-width: 320px;
+  }
+
+  .modalities-section {
+    padding: 50px 30px;
+  }
+
+  .modality-card {
+    width: 90%;
+    height: 300px;
+  }
+
+  .modality-card img {
+    width: 95%;
+  }
+}
+
+/* === Telas pequenas (até 480px) === */
+@media (max-width: 480px) {
+  .welcome-section {
+    padding: 40px 20px;
+  }
+
+  .welcome-content h1 {
+    font-size: 22px;
+  }
+
+  .welcome-content p {
+    font-size: 14px;
+  }
+
+  .modalities-section h2 {
+    font-size: 24px;
+  }
+
+  .modality-content p {
+    font-size: 13px;
+  }
+
+  .modality-card {
+    height: 280px;
+  }
+
+  .modality-card:hover .modality-content {
+    transform: translateY(-50px);
+  }
+}
+/* ===== SEÇÃO UNIDADE ===== */
+.unidade-section {
+  background-color: #1a1a1a;
+  color: #111;
+  text-align: center;
+  padding: 100px 60px;
+  border-bottom: 2px solid #d4af37;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.unidade-header h4 {
+  font-size: 14px;
+  color: #FFF;
+  margin-bottom: 5px;
+  letter-spacing: 2px;
+}
+
+.unidade-header h2 {
+  font-size: 40px;
+  color: #f5b300;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.unidade-header p {
+  color: #fff;
+  font-size: 14px;
+  margin-bottom: 50px;
+}
+
+/* ===== SLIDER ===== */
+.unidade-slider {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto 40px auto;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+}
+
+.slider-container {
+  display: flex;
+  transition: transform 0.6s ease-in-out;
+}
+
+.slider-container img {
+  width: 100%;
+  min-width: 100%;
+  display: none;
+  border-radius: 10px;
+}
+
+.slider-container img.active {
+  display: block;
+}
+
+/* ===== BOTÕES DE NAVEGAÇÃO ===== */
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(245, 179, 0, 0.8);
+  color: black;
+  border: none;
+  font-size: 20px;
+  padding: 12px 16px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  z-index: 10;
+}
+
+.slider-btn:hover {
+  background: #d4af37;
+}
+
+.slider-btn.prev {
+  left: 20px;
+}
+
+.slider-btn.next {
+  right: 20px;
+}
+
+/* ===== BOTÃO FINAL ===== */
+.btn-unidade {
+  display: inline-block;
+  background-color: #000;
+  color: #d4af37;
+  text-decoration: none;
+  padding: 12px 30px;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 700;
+  border-radius: 4px;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.btn-unidade:hover {
+  background-color: #d4af37;
+  color: #111;
+}
+
+/* ===== RESPONSIVIDADE UNIDADE ===== */
+@media (max-width: 768px) {
+  .unidade-header h2 {
+    font-size: 30px;
+  }
+
+  .slider-btn {
+    font-size: 16px;
+    padding: 10px 12px;
+  }
+
+  .btn-unidade {
+    font-size: 13px;
+    padding: 10px 25px;
+  }
+}
+
+/* ===== SEÇÃO EQUIPE ===== */
+.team-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  padding: 100px 100px;
+  background-color: #1a1a1a;
+  color: #fff;
+  border-bottom: 2px solid #d4af37;
+  flex-wrap: wrap;
+}
+
+.team-content {
+  flex: 1;
+  min-width: 300px;
+  max-width: 550px;
+}
+
+.team-content h4 {
+  font-size: 16px;
+  letter-spacing: 3px;
+  color: #d4af37;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.team-content h2 {
+  font-size: 42px;
+  font-weight: 800;
+  color: #d4af37;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.team-content p {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #ccc;
+  margin-bottom: 30px;
+}
+
+.btn-gold-outline {
+  display: inline-block;
+  background-color: transparent;
+  border: 2px solid #d4af37;
+  color: #d4af37;
+  padding: 12px 30px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.btn-gold-outline:hover {
+  background-color: #d4af37;
+  color: #111;
+}
+
+.team-image {
+  flex: 1;
+  text-align: center;
+}
+
+.team-image img {
+  width: 100%;
+  max-width: 480px;
+  border-radius: 10px;
+  border: 2px solid #d4af37;
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.25);
+}
+
+/* ===== RESPONSIVIDADE EQUIPE ===== */
+@media (max-width: 992px) {
+  .team-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 80px 40px;
+  }
+
+  .team-content h2 {
+    font-size: 32px;
+  }
+
+  .team-image img {
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 480px) {
+  .team-section {
+    padding: 60px 25px;
+  }
+
+  .team-content h2 {
+    font-size: 26px;
+  }
+
+  .team-content p {
+    font-size: 14px;
+  }
+
+  .btn-gold-outline {
+    padding: 10px 24px;
+    font-size: 13px;
+  }
+}
+
+/* ===== SEÇÃO HORÁRIOS ===== */
+.schedule-section {
+  background-color: #111;
+  color: #fff;
+  text-align: center;
+  padding: 100px 80px;
+  border-bottom: 2px solid #d4af37;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.schedule-header h4 {
+  font-size: 16px;
+  letter-spacing: 3px;
+  color: #d4af37;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.schedule-header h2 {
+  font-size: 42px;
+  font-weight: 800;
+  color: #d4af37;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.schedule-header p {
+  font-size: 15px;
+  color: #ccc;
+  margin-bottom: 50px;
+  line-height: 1.6;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ===== IMAGEM HORÁRIOS ===== */
+.schedule-image-container {
+  position: relative;
+  display: inline-block;
+  border: 2px solid #d4af37;
+  border-radius: 10px;
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.4);
+  transition: all 0.4s ease;
+  overflow: hidden;
+}
+
+.schedule-image-container img {
+  width: 100%;
+  max-width: 1000px;
+  border-radius: 10px;
+  display: block;
+  transition: transform 0.6s ease;
+
+}
+
+/* ===== EFEITO DE BRILHO FIXO ===== */
+.schedule-image-container::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 10px;
+  background: linear-gradient(45deg, #d4af37, #f6e27a, #d4af37, #b58e00);
+  background-size: 300%;
+  z-index: -1;
+  animation: glowing-border 6s linear infinite;
+  opacity: 0.5;
+}
+
+/* ===== ANIMAÇÃO DE BRILHO ===== */
+@keyframes glowing-border {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+/* ===== RESPONSIVIDADE HORÁRIOS ===== */
+@media (max-width: 1024px) {
+  .schedule-section {
+    padding: 80px 50px;
+  }
+
+  .schedule-header h2 {
+    font-size: 32px;
+  }
+
+  .schedule-image-container img {
+    max-width: 800px;
+  }
+}
+
+@media (max-width: 768px) {
+  .schedule-section {
+    padding: 60px 30px;
+  }
+
+  .schedule-header h2 {
+    font-size: 28px;
+  }
+
+  .schedule-header p {
+    font-size: 14px;
+  }
+
+  .schedule-image-container img {
+    max-width: 600px;
+  }
+}
+
+@media (max-width: 480px) {
+  .schedule-section {
+    padding: 50px 20px;
+  }
+
+  .schedule-header h2 {
+    font-size: 24px;
+  }
+
+  .schedule-header p {
+    font-size: 13px;
+  }
+
+  .schedule-image-container img {
+    max-width: 100%;
+  }
+}
+
+/* ===== BOTÕES GERAIS ===== */
+.btn-gold,
+.btn-gold-outline,
+.btn-unidade {
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ===== AJUSTES EXTRAS PARA MOBILE ===== */
+@media (max-width: 1024px) {
+  .navbar {
+    padding: 15px 30px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .modality-card img {
+    bottom: -65%;
+  }
+}
+
+@media (max-width: 480px) {
+  .modality-card img {
+    bottom: -70%;
+  }
+}
+
+/* ===== GARANTIA DE PRIORIDADE DO MENU MOBILE ===== */
+.mobile-menu {
+  z-index: 99999 !important;
+}
+
+/* ===== HOVER SOMENTE NA IMAGEM DA SEÇÃO HORÁRIOS ===== */
+.schedule-image-container img {
+  transition: transform 0.45s ease;
+}
+
+/* Hover apenas na imagem (desktop) */
+.schedule-image-container:hover img {
+  transform: scale(1.05);
+}
+
+/* Touch / mobile: ativa zoom suave no toque */
+.schedule-image-container.touch-active img {
+  transform: scale(1.05);
+}
+
+/* Redução do efeito em telas muito pequenas */
+@media (max-width: 480px) {
+  .schedule-image-container:hover img,
+  .schedule-image-container.touch-active img {
+    transform: scale(1.03);
+  }
+}
+/* ===== CORREÇÃO FORTE: MODALITY CARDS MOBILE (TEXTO ACIMA, IMAGEM ABAIXO) ===== */
+/* Aplica para tablets e celulares até 1024px */
+@media (max-width: 1024px) {
+  .modalities-grid {
+    gap: 24px;
+    padding: 0 16px;
+  }
+
+  .modality-card {
+    /* transforma o card em coluna: texto em cima, imagem embaixo */
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    width: 100% !important;
+    max-width: 520px !important;
+    height: auto !important;
+    padding: 20px !important;
+    box-sizing: border-box !important;
+    background-clip: padding-box;
+  }
+
+  /* Garante que o conteúdo textual fique acima */
+  .modality-card .modality-content {
+    position: relative !important;
+    z-index: 5 !important;
+    order: 1 !important;
+    width: 100% !important;
+    text-align: center !important;
+    margin: 0 0 12px 0 !important;
+    transform: none !important;
+  }
+
+  /* Imagem passa a ser parte do fluxo, sempre abaixo do texto */
+  .modality-card img {
+    position: static !important;
+    bottom: auto !important;
+    left: auto !important;
+    transform: none !important;
+    opacity: 1 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    order: 2 !important;
+    margin-top: 12px !important;
+    border-radius: 8px !important;
+    box-shadow: 0 0 18px rgba(0,0,0,0.25) !important;
+  }
+
+  /* Desativa hover pesado no mobile/tablet para evitar quebra */
+  .modality-card:hover .modality-content,
+  .modality-card:hover img {
+    transform: none !important;
+    bottom: auto !important;
+  }
+}
+
+/* Ajustes extras para telas pequenas (celular) */
+@media (max-width: 480px) {
+  .modality-card {
+    padding: 14px !important;
+  }
+
+  .modality-content h3 {
+    font-size: 18px !important;
+  }
+
+  .modality-content p {
+    font-size: 14px !important;
+    max-width: 100% !important;
+  }
+
+  .modalities-grid {
+    gap: 18px;
+  }
+}
+/* ===== TROCA DE IMAGEM NO HOVER (VERSÃO CORRIGIDA) =====
+
+.schedule-image-container {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+ A imagem principal define o tamanho do container 
+.schedule-image-container .img-default {
+  width: 100%;
+  max-width: 1000px;
+  display: block;
+  position: relative; /* importante! mantém a altura 
+  border-radius: 10px;
+  transition: opacity 0.4s ease;
+}
+
+/* A imagem secundária fica por cima e começa invisível 
+.schedule-image-container .img-hover {
+  width: 100%;
+  max-width: 1000px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 10px;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 2;
+}
+
+/* ===== HOVER ===== 
+.schedule-image-container:hover .img-default {
+  opacity: 0;
+}
+
+.schedule-image-container:hover .img-hover {
+  opacity: 1;
+} */

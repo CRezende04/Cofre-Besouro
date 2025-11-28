@@ -1,0 +1,443 @@
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  transition: all 0.3s ease;
+}
+
+/* ===== BODY ===== */
+body {
+  background-color: #2b2b2b;
+  color: #fff;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #111;
+  padding: 15px 60px;
+  border-bottom: 2px solid #d4af37;
+}
+
+/* Área esquerda */
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+/* LOGO */
+.logo img {
+  height: 70px;
+  width: auto;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+  transform: scale(1.05);
+}
+
+/* LINKS */
+.nav-links {
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #d4af37;
+}
+
+/* BOTÃO */
+.intro-btn {
+  border: 1px solid #d4af37;
+  color: #d4af37;
+  background: transparent;
+  padding: 8px 20px;
+  border-radius: 6px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.intro-btn:hover {
+  background-color: #d4af37;
+  color: #111;
+}
+
+/* ===== MENU MOBILE FULLSCREEN ===== */
+.mobile-only {
+  display: none;
+}
+
+.desktop-only {
+  display: flex;
+}
+
+.menu-btn {
+  background: none;
+  border: none;
+  font-size: 32px;
+  color: #d4af37;
+  cursor: pointer;
+}
+
+/* Tela cheia */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s ease;
+  z-index: 9999;
+}
+
+.mobile-menu.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mobile-menu-links {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  text-align: center;
+}
+
+.mobile-menu-links a {
+  font-size: 24px;
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: 2px;
+}
+
+.mobile-menu-links .gold {
+  color: #d4af37;
+}
+
+.close-menu {
+  background: none;
+  border: none;
+  font-size: 38px;
+  position: absolute;
+  right: 30px;
+  top: 25px;
+  color: #d4af37;
+  cursor: pointer;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  position: relative;
+  background-color: #111;
+  color: #fff;
+  padding: 60px 0 30px;
+  border-top: 2px solid #d4af37;
+  overflow: hidden;
+}
+
+.footer-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-image: url("/assets/logo-KING-2.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 50%;
+  opacity: 0.07;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.footer-container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 40px;
+  gap: 40px;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 280px;
+}
+
+.footer-section.left {
+  text-align: left;
+}
+
+.footer-section.right {
+  text-align: right;
+}
+
+.footer-logo {
+  width: 120px;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.footer-section h3 {
+  color: #d4af37;
+  font-weight: 700;
+  font-size: 16px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.footer-section p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #ddd;
+  margin-bottom: 12px;
+}
+
+/* ===== ÍCONES DE CONTATO ===== */
+.footer-section i {
+  font-size: 16px;
+  margin-right: 8px;
+  color: #d4af37;
+  vertical-align: middle;
+}
+
+
+.footer-section a:hover {
+  color: #d4af37;
+  /* muda para dourado no hover */
+  text-decoration: underline;
+}
+
+/* ÍCONE DE TELEFONE SVG FINO */
+.icon-phone {
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+  margin-right: 8px;
+  color: #d4af37;
+}
+
+/* ===== ÍCONES REDES SOCIAIS ===== */
+.social-links {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+.social-links a {
+  text-decoration: none;
+}
+
+.social-links a i {
+  font-size: 20px;
+  color: #2b2b2b;
+  background-color: #d4af37;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover i {
+  background-color: #fff;
+  color: #111;
+  transform: scale(1.1);
+  box-shadow: 0 0 10px #d4af37;
+}
+
+/* ===== POLÍTICA DE PRIVACIDADE ===== */
+.privacy-link {
+  margin-top: 15px;
+}
+
+.privacy-link a {
+  color: #aaa;
+  font-size: 13px;
+  text-decoration: underline;
+}
+
+.privacy-link a:hover {
+  color: #d4af37;
+}
+
+/* ===== RODAPÉ INFERIOR ===== */
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid #333;
+  margin-top: 40px;
+  padding-top: 10px;
+  z-index: 2;
+  position: relative;
+}
+
+.footer-bottom p {
+  font-size: 13px;
+  color: #aaa;
+  text-transform: uppercase;
+}
+
+/* ===== BOTÃO FLUTUANTE WHATSAPP ===== */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #d4af37;
+  color: #2b2b2b;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  text-decoration: none;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  background-color: #fff;
+  color: #111;
+  box-shadow: 0 0 20px #d4af37;
+}
+
+/* ===== BOTÃO VOLTAR AO TOPO ===== */
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  width: 60px;
+  height: 60px;
+  background-color: #d4a017;
+  border: none;
+  border-radius: 50%;
+  color: #2b2b2b;
+  font-size: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top:hover {
+  transform: scale(1.1);
+  background-color: #fff;
+  box-shadow: 0 0 20px #d4af37;
+}
+
+/* ===== RESPONSIVIDADE GERAL ===== */
+
+/* Tablets e celulares — ATÉ 1024px */
+@media (max-width: 1024px) {
+  .desktop-only {
+    display: none !important;
+  }
+
+  .mobile-only {
+    display: block !important;
+  }
+
+  .navbar {
+    padding: 15px 30px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .footer-section.right {
+    text-align: center;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+}
+
+/* Celulares — ATÉ 768px */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 12px 20px;
+  }
+
+  .logo img {
+    height: 55px;
+  }
+
+  .mobile-menu-links a {
+    font-size: 22px;
+  }
+}
+
+/* Telas pequenas — ATÉ 480px */
+@media (max-width: 480px) {
+  .mobile-menu-links a {
+    font-size: 20px;
+  }
+
+  .close-menu {
+    font-size: 32px;
+  }
+
+  .footer-section p {
+    font-size: 13px;
+  }
+
+  .whatsapp-float {
+    width: 55px;
+    height: 55px;
+    font-size: 28px;
+  }
+
+  .back-to-top {
+    width: 55px;
+    height: 55px;
+    font-size: 28px;
+  }
+}
