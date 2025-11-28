@@ -1,0 +1,513 @@
+/* IMPORT FONTE PERMANENT MARKER + BANGERS */
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Bangers&display=swap');
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #0f0f0f;
+    color: #fff;
+}
+
+/* HEADER */
+.main-header {
+    background-color: #0b0b0b;
+    width: 100%;
+}
+
+/* TOPO */
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 50px;
+    flex-wrap: wrap;
+}
+
+/* LOGO */
+.logo img {
+    height: 120px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* DIREITA (busca, carrinho, menu hambúrguer) */
+.search-cart {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Caixa de busca */
+.search-box {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    border: 1px solid #444;
+    border-radius: 2px;
+    padding: 5px 10px;
+}
+
+.search-box i {
+    color: #aaa;
+    margin-right: 8px;
+}
+
+.search-box input {
+    background: none;
+    border: none;
+    color: white;
+    outline: none;
+    width: 200px;
+}
+
+/* Carrinho */
+.cart {
+    position: relative;
+}
+
+.cart i {
+    font-size: 1.4rem;
+    color: #c7c7c7;
+}
+
+.cart-count {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background: #f9d71c;
+    color: black;
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 2px 5px;
+    border-radius: 50%;
+}
+
+/* NAV BAR */
+.nav-bar {
+    background-color: #1a1a1d;
+    border-top: 1px solid #222;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px 40px;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
+}
+
+/* Links do menu */
+.menu-links {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    list-style: none;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.menu-links a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.3s;
+}
+
+.menu-links a:hover {
+    color: #f9d71c;
+}
+
+/* ÍCONES SOCIAIS (linha de baixo do header) */
+.social-icons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.social-icons a {
+    color: #ccc;
+    font-size: 1.3rem;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.social-icons a:hover {
+    color: #f9d71c;
+    transform: scale(1.1);
+}
+
+/* BOTÃO HAMBÚRGUER */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.6rem;
+    cursor: pointer;
+}
+
+/* RESPONSIVO */
+@media (max-width: 900px) {
+    .top-bar {
+        padding: 10px 25px;
+    }
+
+    .search-box {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        overflow: hidden;
+        max-height: 0;
+        opacity: 0;
+    }
+
+    .nav-bar.open {
+        max-height: 500px;
+        opacity: 1;
+    }
+
+    .menu-links {
+        flex-direction: column;
+        width: 100%;
+        gap: 12px;
+    }
+
+    .social-icons {
+        justify-content: center;
+        width: 100%;
+        margin-top: 15px;
+    }
+
+    .logo img {
+        height: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo img {
+        height: 40px;
+    }
+}
+
+/* SEÇÃO BEM-VINDO */
+.welcome-section {
+    background-color: #0f0f0f;
+    padding: 60px 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.welcome-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.welcome-image img {
+    width: 380px;
+    max-width: 100%;
+    border-radius: 4px;
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.1);
+    transition: transform 0.4s ease;
+}
+
+.welcome-image img:hover {
+    transform: scale(1.03);
+}
+
+.welcome-text {
+    max-width: 600px;
+    color: #e6e6e6;
+    line-height: 1.6;
+}
+
+.welcome-text h2 {
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.welcome-text h3 {
+    font-size: 1.2rem;
+    color: #f9d71c;
+    margin-bottom: 20px;
+}
+
+.welcome-text p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    color: #d0d0d0;
+    text-align: justify;
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+    .welcome-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .welcome-text {
+        max-width: 90%;
+    }
+
+    .welcome-text h2 {
+        font-size: 1.8rem;
+    }
+
+    .welcome-text h3 {
+        font-size: 1.1rem;
+    }
+
+    .welcome-section {
+        padding: 40px 20px;
+    }
+}
+
+.section-divider {
+    height: 8px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 60px auto;
+    border-radius: 4px;
+    background: linear-gradient(to right, #00b140, #f9d71c);
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.15);
+    background-color: transparent;
+}
+
+/* SEÇÃO KT BRASIL */
+.kt-section {
+    background-color: #0f0f0f;
+    padding: 60px 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.kt-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.kt-image img {
+    width: 400px;
+    max-width: 100%;
+    border-radius: 4px;
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.1);
+    transition: transform 0.4s ease;
+}
+
+.kt-image img:hover {
+    transform: scale(1.03);
+}
+
+.kt-text {
+    max-width: 600px;
+    color: #e6e6e6;
+    line-height: 1.6;
+}
+
+.kt-text h2 {
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.kt-text h3 {
+    font-size: 1.2rem;
+    color: #f9d71c;
+    margin-bottom: 20px;
+}
+
+.kt-text p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    color: #d0d0d0;
+    text-align: justify;
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+    .kt-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .kt-text {
+        max-width: 90%;
+    }
+
+    .kt-text h2 {
+        font-size: 1.8rem;
+    }
+
+    .kt-text h3 {
+        font-size: 1.1rem;
+    }
+
+    .kt-section {
+        padding: 40px 20px;
+    }
+}
+
+/* ===== FONTES PERMANENT MARKER ===== */
+.welcome-text h2,
+.welcome-text h3,
+.kt-text h2,
+.kt-text h3 {
+  font-family: 'Permanent Marker', cursive;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* ====== FOOTER ====== */
+.main-footer {
+    background-color: #0b0b0b;
+    color: #fff;
+    padding: 60px 20px 30px;
+    text-align: center;
+    border-top: 1px solid #1a1a1a;
+}
+
+/* ✅ Fonte diferenciada e maior para o título do footer */
+.main-footer h2,
+.footer-title {
+    font-family: 'Bangers', cursive;
+    font-size: 2.3rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.partners-section h2 {
+    margin-bottom: 40px;
+    font-weight: 600;
+}
+
+.partners-logos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 30px;
+    align-items: center;
+    justify-items: center;
+    max-width: 1000px;
+    margin: 0 auto 50px;
+}
+
+.partners-logos img {
+    max-width: 140px;
+    height: auto;
+    filter: brightness(0.9);
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.partners-logos img:hover {
+    transform: scale(1.08);
+    filter: brightness(1.1);
+}
+
+/* Contato e redes */
+.footer-contact {
+    border-top: 1px solid #222;
+    padding-top: 30px;
+}
+
+.footer-contact a {
+    color: #f9d71c;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.footer-contact a:hover {
+    text-decoration: underline;
+}
+
+/* Ícones sociais */
+.footer-social {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.footer-social a {
+    font-size: 1.5rem;
+    transition: color 0.3s, transform 0.3s;
+}
+
+/* ✅ Aumentar tamanho dos ícones ao passar o mouse */
+.footer-social a:hover {
+    transform: scale(1.4);
+}
+
+/* ===== CORES DOS ÍCONES SOCIAIS ===== */
+.footer-social a i.fa-whatsapp {
+    color: #25D366;
+}
+
+.footer-social a:hover i.fa-whatsapp {
+    color: #1EBE5D;
+}
+
+.footer-social a i.fa-instagram {
+    display: inline-block;
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.footer-social a:hover i.fa-instagram {
+    filter: brightness(1.2);
+}
+
+.footer-social a i.fa-facebook-f {
+    color: #1877F2;
+}
+
+.footer-social a:hover i.fa-facebook-f {
+    color: #0D5BE1;
+}
+
+/* Texto final */
+.footer-copy {
+    font-size: 0.85rem;
+    color: #999;
+    margin-top: 15px;
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+    .partners-section h2 {
+        font-size: 1.3rem;
+    }
+
+    .partners-logos {
+        gap: 20px;
+    }
+
+    .partners-logos img {
+        max-width: 110px;
+    }
+}
